@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { GlobalContext } from "../../GlobalContext";
+import Cart from "../Carrinho/Carrinho";
 
 const StyledImg = styled.img`
   border-radius: 1rem;
@@ -30,31 +31,27 @@ const StyledCategory = styled.p`
 const Imagem = () => {
   const { dados } = React.useContext(GlobalContext);
   if (dados === null) return null;
-  console.log(dados);
   return (
     <StyledDivImg>
-      {dados.map((dado) => {
+      {dados.map(({ image, category, name, price }) => {
         return (
-          <div key={dado.category}>
-            <StyledImg src={dado.image.desktop}></StyledImg>
+          <div key={category}>
+            <StyledImg src={image.desktop}></StyledImg>
             {dados && (
               <StyledDadosImagem>
-                {dado.category && (
-                  <StyledCategory>{dado.category}</StyledCategory>
-                )}
-                {dado.category && (
+                {category && <StyledCategory>{category}</StyledCategory>}
+                {category && (
                   <p>
-                    <strong>{dado.name}</strong>
+                    <strong>{name}</strong>
                   </p>
                 )}
-                {dado.category && (
-                  <StyledPreco>${dado.price.toFixed(2)}</StyledPreco>
-                )}
+                {category && <StyledPreco>${price.toFixed(2)}</StyledPreco>}
               </StyledDadosImagem>
             )}
           </div>
         );
       })}
+      <Cart />
     </StyledDivImg>
   );
 };
