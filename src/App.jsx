@@ -1,13 +1,13 @@
 import React from "react";
-import Title from "./components/Title";
 import "./styles/geral.css";
 import { GlobalStorage } from "./GlobalContext";
-import Nome from "./components/Container/Container";
+import Imagem from "./components/Imagem/Imagem";
+
 function App() {
   return (
     <GlobalStorage>
-      <Title />
-      <Nome />
+      <h1>Desserts</h1>
+      <Imagem />
     </GlobalStorage>
   );
 }

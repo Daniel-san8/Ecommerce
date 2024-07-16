@@ -3,6 +3,7 @@ import React from "react";
 export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
+  // Dados da API
   const [dados, setDados] = React.useState(null);
 
   React.useEffect(() => {
@@ -11,7 +12,6 @@ export const GlobalStorage = ({ children }) => {
         const dadosOk = await fetch("/src/assets/data/data.json");
         const json = await dadosOk.json();
         setDados(json);
-        console.log(json);
       } catch {
         throw "Deu erro no consumo da API";
       }
@@ -20,8 +20,21 @@ export const GlobalStorage = ({ children }) => {
     puxarDados();
   }, []);
 
+  // Telas pra responsividade
+  let [larguraUsuario, setLarguraUsuario] = React.useState(window.innerWidth);
+
+  React.useEffect(() => {
+    function modificaLargura() {
+      setLarguraUsuario(window.innerWidth);
+    }
+    window.addEventListener("resize", modificaLargura);
+    return () => {
+      removeEventListener("resize", modificaLargura);
+    };
+  }, [window.innerWidth]);
+
   return (
-    <GlobalContext.Provider value={{ dados }}>
+    <GlobalContext.Provider value={{ dados, larguraUsuario }}>
       {children}
     </GlobalContext.Provider>
   );

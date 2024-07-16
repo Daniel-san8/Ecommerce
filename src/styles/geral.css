@@ -4,3 +4,7 @@ body {
   background-color: hsl(20, 50%, 98%);
   font-family: "Red Hat Text", sans-serif;
 }
+
+h1 {
+  margin: 2rem;
+}
