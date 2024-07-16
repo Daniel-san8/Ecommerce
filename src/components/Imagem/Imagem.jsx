@@ -14,9 +14,17 @@ const StyledDivImg = styled.div`
   flex-direction: column;
 `;
 
-const DadosImagem = styled.div`
-  margin: 0 auto;
-  background-color: "black";
+const StyledDadosImagem = styled.div`
+  margin: 0 1.5rem;
+`;
+
+const StyledPreco = styled.p`
+  color: hsl(14, 86%, 42%);
+  font-weight: bolder;
+`;
+
+const StyledCategory = styled.p`
+  color: gray;
 `;
 
 const Imagem = () => {
@@ -30,15 +38,19 @@ const Imagem = () => {
           <div key={dado.category}>
             <StyledImg src={dado.image.desktop}></StyledImg>
             {dados && (
-              <DadosImagem>
-                {dado.category && <p>{dado.category}</p>}
+              <StyledDadosImagem>
+                {dado.category && (
+                  <StyledCategory>{dado.category}</StyledCategory>
+                )}
                 {dado.category && (
                   <p>
                     <strong>{dado.name}</strong>
                   </p>
                 )}
-                {dado.category && <p>R$: {dado.price}</p>}
-              </DadosImagem>
+                {dado.category && (
+                  <StyledPreco>${dado.price.toFixed(2)}</StyledPreco>
+                )}
+              </StyledDadosImagem>
             )}
           </div>
         );
