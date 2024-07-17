@@ -37,6 +37,8 @@ export const GlobalStorage = ({ children }) => {
 
   const [totalItems, setTotalItems] = React.useState(0);
 
+  //Estilo do Cart button
+
   return (
     <GlobalContext.Provider value={{ dados, larguraUsuario, totalItems }}>
       {children}

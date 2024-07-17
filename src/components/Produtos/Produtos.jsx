@@ -8,13 +8,12 @@ import {
   StyledName,
   StyledPreco,
 } from "./ComponentsImagem";
-import {
-  StyledContainerButtonCart,
-  StyledTextoButtonCart,
-} from "../Carrinho/ButtonImg/ButtonImg";
+
+import CarrinhoPronto from "../Carrinho/CarrinhoPronto";
+import CarrinhoOnProduct from "../Carrinho/CarrinhoOnProduct";
 
 const Produtos = () => {
-  const { dados } = React.useContext(GlobalContext);
+  const { dados, totalItems } = React.useContext(GlobalContext);
   if (dados === null) return null;
   return (
     <>
@@ -22,10 +21,11 @@ const Produtos = () => {
         return (
           <StyledDivImg key={category}>
             <StyledImg src={image.desktop}></StyledImg>
-            <StyledContainerButtonCart>
-              <img src="./src/assets/images/icon-add-to-cart.svg" />
-              <StyledTextoButtonCart>Add to Cart</StyledTextoButtonCart>
-            </StyledContainerButtonCart>
+            {totalItems >= 1 ? (
+              <CarrinhoOnProduct />
+            ) : totalItems === 0 ? (
+              <CarrinhoPronto />
+            ) : null}
             {dados && (
               <StyledDadosImagem>
                 {category && <StyledCategory>{category}</StyledCategory>}
