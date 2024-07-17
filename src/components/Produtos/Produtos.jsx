@@ -8,7 +8,10 @@ import {
   StyledName,
   StyledPreco,
 } from "./ComponentsImagem";
-import Carrinho from "../Carrinho/Carrinho";
+import {
+  StyledContainerButtonCart,
+  StyledTextoButtonCart,
+} from "../Carrinho/ButtonImg/ButtonImg";
 
 const Produtos = () => {
   const { dados } = React.useContext(GlobalContext);
@@ -19,6 +22,10 @@ const Produtos = () => {
         return (
           <StyledDivImg key={category}>
             <StyledImg src={image.desktop}></StyledImg>
+            <StyledContainerButtonCart>
+              <img src="./src/assets/images/icon-add-to-cart.svg" />
+              <StyledTextoButtonCart>Add to Cart</StyledTextoButtonCart>
+            </StyledContainerButtonCart>
             {dados && (
               <StyledDadosImagem>
                 {category && <StyledCategory>{category}</StyledCategory>}
