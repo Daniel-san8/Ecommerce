@@ -21,7 +21,7 @@ export const StyledCategory = styled.p`
 `;
 
 export const StyledName = styled.p`
-  font-weight: bold;
+  font-weight: 600;
 `;
 
 export const StyledPreco = styled.p`
