@@ -22,7 +22,7 @@ const Produtos = () => {
           <StyledDivImg key={category}>
             <StyledImg
               src={
-                larguraUsuario <= 375
+                larguraUsuario <= 420
                   ? image.mobile
                   : larguraUsuario <= 768
                   ? image.tablet
