@@ -9,7 +9,7 @@ export const StyledDivImg = styled.div`
 export const StyledImg = styled.img`
   border-radius: 1rem;
   max-width: 90%;
-  margin: 0 auto;
+  margin: 2rem auto;
   display: block;
 `;
 
