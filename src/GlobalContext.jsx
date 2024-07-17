@@ -21,7 +21,7 @@ export const GlobalStorage = ({ children }) => {
   }, []);
 
   // Telas pra responsividade
-  let [larguraUsuario, setLarguraUsuario] = React.useState(window.innerWidth);
+  const [larguraUsuario, setLarguraUsuario] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
     function modificaLargura() {
@@ -33,8 +33,12 @@ export const GlobalStorage = ({ children }) => {
     };
   }, [window.innerWidth]);
 
+  //Total de itens no Carrinho
+
+  const [totalItems, setTotalItems] = React.useState(0);
+
   return (
-    <GlobalContext.Provider value={{ dados, larguraUsuario }}>
+    <GlobalContext.Provider value={{ dados, larguraUsuario, totalItems }}>
       {children}
     </GlobalContext.Provider>
   );

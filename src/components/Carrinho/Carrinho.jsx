@@ -6,13 +6,13 @@ import {
   StyledCarrinhoParagrafo,
   StyledTituloCarrinho,
 } from "./CompononentsCarrinho";
-// import { GlobalContext } from "../../GlobalContext";
+import { GlobalContext } from "../../GlobalContext";
 
 const Carrinho = () => {
-  // const { larguraUsuario } = React.useContext(GlobalContext);
+  const { totalItems } = React.useContext(GlobalContext);
   return (
     <StyledCarrinhoContainer>
-      <StyledTituloCarrinho>Your Cart(0)</StyledTituloCarrinho>
+      <StyledTituloCarrinho>Your Cart({totalItems})</StyledTituloCarrinho>
       <StyledCarrinhoDiv>
         <StyledCarrinhoImg src="./src/assets/images/illustration-empty-cart.svg"></StyledCarrinhoImg>
         <StyledCarrinhoParagrafo>
