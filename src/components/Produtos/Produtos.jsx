@@ -13,15 +13,25 @@ import CarrinhoPronto from "../Carrinho/CarrinhoPronto";
 import CarrinhoOnProduct from "../Carrinho/CarrinhoOnProduct";
 
 const Produtos = () => {
-  const { dados, totalItems } = React.useContext(GlobalContext);
+  const { dados, totalItems, larguraUsuario } = React.useContext(GlobalContext);
   if (dados === null) return null;
   return (
     <>
-      {dados.map(({ image, category, name, price }) => {
+      {dados.map(({ image, category, name, price, id }) => {
         return (
           <StyledDivImg key={category}>
-            <StyledImg src={image.desktop}></StyledImg>
-            {totalItems === 0 ? <CarrinhoPronto /> : null}
+            <StyledImg
+              src={
+                larguraUsuario <= 375
+                  ? image.mobile
+                  : larguraUsuario <= 768
+                  ? image.tablet
+                  : larguraUsuario > 769
+                  ? image.desktop
+                  : null
+              }
+            ></StyledImg>
+            {totalItems === 0 ? <CarrinhoPronto /> : <CarrinhoOnProduct />}
             {dados && (
               <StyledDadosImagem>
                 {category && <StyledCategory>{category}</StyledCategory>}

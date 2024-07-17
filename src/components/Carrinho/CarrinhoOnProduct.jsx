@@ -4,16 +4,19 @@ import {
   StyledButtonOnProductIncDec,
   StyledspanIncDec,
 } from "./ButtonImg/ButtonImg";
+import { GlobalContext } from "../../GlobalContext";
 
 const CarrinhoOnProduct = () => {
+  const { totalItems, decremento, setarTotal } =
+    React.useContext(GlobalContext);
   return (
     <StyledButtonOnProduct>
       <StyledButtonOnProductIncDec>
-        <StyledspanIncDec>
+        <StyledspanIncDec onClick={setarTotal}>
           <img src="./src/assets/images/icon-increment-quantity.svg" />
         </StyledspanIncDec>
         <span>{totalItems}</span>
-        <StyledspanIncDec>
+        <StyledspanIncDec onClick={decremento}>
           <img src="./src/assets/images/icon-decrement-quantity.svg" />
         </StyledspanIncDec>
       </StyledButtonOnProductIncDec>

@@ -6,7 +6,7 @@ export const StyledContainerButtonCart = styled.div`
   height: 10%;
   position: absolute;
   bottom: 130px;
-  right: 87px;
+  right: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +14,7 @@ export const StyledContainerButtonCart = styled.div`
   border-radius: 25px;
   border: 1px solid hsl(7, 20%, 60%);
   cursor: pointer;
+  transition: 0.2s;
 `;
 
 export const StyledTextoButtonCart = styled.span`
@@ -27,17 +28,19 @@ export const StyledButtonOnProduct = styled.div`
   height: 10%;
   position: absolute;
   bottom: 130px;
-  right: 87px;
+  right: 26%;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 25px;
   border: 1px solid transparent;
   color: white;
+  transition: 0.2s;
 `;
 
 export const StyledButtonOnProductIncDec = styled.span`
   display: flex;
+  transition: 0.2s;
   gap: 3rem;
 `;
 
@@ -45,4 +48,5 @@ export const StyledspanIncDec = styled.span`
   display: flex;
   align-self: center;
   cursor: pointer;
+  transition: 0.2s;
 `;

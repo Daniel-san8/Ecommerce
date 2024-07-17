@@ -5,15 +5,18 @@ export const GlobalContext = React.createContext();
 export const GlobalStorage = ({ children }) => {
   // Dados da API
   const [dados, setDados] = React.useState(null);
+  const [ids, setIds] = React.useState([]);
 
   React.useEffect(() => {
     async function puxarDados() {
       try {
         const dadosOk = await fetch("/src/assets/data/data.json");
         const json = await dadosOk.json();
+        const ids = json.map((dado) => dado.id);
+        setIds(ids);
         setDados(json);
-      } catch {
-        throw "Deu erro no consumo da API";
+      } catch (error) {
+        console.error("Erro no consumo da API:", error);
       }
     }
 
@@ -41,11 +44,15 @@ export const GlobalStorage = ({ children }) => {
     setTotalItems(totalItems + 1);
   }
 
+  function decremento() {
+    setTotalItems(totalItems - 1);
+  }
+
   //Estilo do Cart button
 
   return (
     <GlobalContext.Provider
-      value={{ dados, larguraUsuario, totalItems, setarTotal }}
+      value={{ dados, larguraUsuario, totalItems, setarTotal, decremento }}
     >
       {children}
     </GlobalContext.Provider>
