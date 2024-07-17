@@ -22,7 +22,6 @@ export const StyledCarrinhoDiv = styled.div`
 
 export const StyledCarrinhoImg = styled.img`
   max-width: 50%;
-  src: "./src/assets/images/illustration-empty-cart.svg";
 `;
 
 export const StyledCarrinhoParagrafo = styled.p`
