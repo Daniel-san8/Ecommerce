@@ -1,13 +1,15 @@
 import React from "react";
 import "./styles/geral.css";
 import { GlobalStorage } from "./GlobalContext";
-import Imagem from "./components/Imagem/Imagem";
+import Produtos from "./components/Produtos/Produtos";
+import Carrinho from "./components/Carrinho/Carrinho";
 
 function App() {
   return (
     <GlobalStorage>
       <h1>Desserts</h1>
-      <Imagem />
+      <Produtos />
+      <Carrinho />
     </GlobalStorage>
   );
 }

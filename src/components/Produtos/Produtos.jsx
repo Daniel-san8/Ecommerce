@@ -1,6 +1,5 @@
 import React from "react";
 import { GlobalContext } from "../../GlobalContext";
-import Cart from "../Carrinho/Carrinho";
 import {
   StyledCategory,
   StyledDadosImagem,
@@ -9,8 +8,9 @@ import {
   StyledName,
   StyledPreco,
 } from "./ComponentsImagem";
+import Carrinho from "../Carrinho/Carrinho";
 
-const Imagem = () => {
+const Produtos = () => {
   const { dados } = React.useContext(GlobalContext);
   if (dados === null) return null;
   return (
@@ -29,9 +29,8 @@ const Imagem = () => {
           </StyledDivImg>
         );
       })}
-      <Cart />
     </>
   );
 };
 
-export default Imagem;
+export default Produtos;

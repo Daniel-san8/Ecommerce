@@ -1,9 +1,26 @@
 import React from "react";
-import { GlobalContext } from "../../GlobalContext";
+import {
+  StyledCarrinhoContainer,
+  StyledCarrinhoDiv,
+  StyledCarrinhoImg,
+  StyledCarrinhoParagrafo,
+  StyledTituloCarrinho,
+} from "./CompononentsCarrinho";
+// import { GlobalContext } from "../../GlobalContext";
 
-const Cart = () => {
-  const { larguraUsuario } = React.useContext(GlobalContext);
-  return <h1>{larguraUsuario}</h1>;
+const Carrinho = () => {
+  // const { larguraUsuario } = React.useContext(GlobalContext);
+  return (
+    <StyledCarrinhoContainer>
+      <StyledTituloCarrinho>Your Cart(0)</StyledTituloCarrinho>
+      <StyledCarrinhoDiv>
+        <StyledCarrinhoImg src="./src/assets/images/illustration-empty-cart.svg"></StyledCarrinhoImg>
+        <StyledCarrinhoParagrafo>
+          Your added items will appear here
+        </StyledCarrinhoParagrafo>
+      </StyledCarrinhoDiv>
+    </StyledCarrinhoContainer>
+  );
 };
 
-export default Cart;
+export default Carrinho;
