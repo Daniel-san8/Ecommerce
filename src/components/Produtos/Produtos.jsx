@@ -21,11 +21,7 @@ const Produtos = () => {
         return (
           <StyledDivImg key={category}>
             <StyledImg src={image.desktop}></StyledImg>
-            {totalItems >= 1 ? (
-              <CarrinhoOnProduct />
-            ) : totalItems === 0 ? (
-              <CarrinhoPronto />
-            ) : null}
+            {totalItems === 0 ? <CarrinhoPronto /> : null}
             {dados && (
               <StyledDadosImagem>
                 {category && <StyledCategory>{category}</StyledCategory>}

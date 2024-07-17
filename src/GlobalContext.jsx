@@ -38,17 +38,14 @@ export const GlobalStorage = ({ children }) => {
   const [totalItems, setTotalItems] = React.useState(0);
 
   function setarTotal() {
-    setTotalItems((totalItems) => {
-      totalItems + 1;
-      console.log(totalItems);
-    });
+    setTotalItems(totalItems + 1);
   }
 
   //Estilo do Cart button
 
   return (
     <GlobalContext.Provider
-      value={{ dados, larguraUsuario, totalItems, setarTotal: setarTotal }}
+      value={{ dados, larguraUsuario, totalItems, setarTotal }}
     >
       {children}
     </GlobalContext.Provider>

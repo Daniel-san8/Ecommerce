@@ -6,7 +6,7 @@ import {
 import { GlobalContext } from "../../GlobalContext";
 
 const CarrinhoPronto = () => {
-  const { setarTotal } = React.useContext(GlobalContext);
+  const { setarTotal, totalItems } = React.useContext(GlobalContext);
 
   return (
     <StyledContainerButtonCart onClick={setarTotal}>
