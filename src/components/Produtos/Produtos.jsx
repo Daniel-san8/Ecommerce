@@ -17,7 +17,7 @@ const Produtos = () => {
   if (dados === null) return null;
   return (
     <>
-      {dados.map(({ image, category, name, price, id }) => {
+      {dados.map(({ image, category, name, price }) => {
         return (
           <StyledDivImg key={category}>
             <StyledImg

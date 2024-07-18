@@ -4,6 +4,7 @@ export const StyledContainerButtonCart = styled.div`
   background-color: white;
   width: 50%;
   height: 10%;
+  max-width: 300px;
   position: absolute;
   bottom: 130px;
   right: 25%;
@@ -26,6 +27,7 @@ export const StyledButtonOnProduct = styled.div`
   background-color: hsl(14, 86%, 42%);
   width: 50%;
   height: 10%;
+  max-width: 300px;
   position: absolute;
   bottom: 130px;
   right: 26%;

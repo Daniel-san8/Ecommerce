@@ -12,7 +12,7 @@ const Carrinho = () => {
   const { totalItems } = React.useContext(GlobalContext);
   return (
     <StyledCarrinhoContainer>
-      <StyledTituloCarrinho>Your Cart({totalItems})</StyledTituloCarrinho>
+      <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
       <StyledCarrinhoDiv>
         <StyledCarrinhoImg src="./src/assets/images/illustration-empty-cart.svg"></StyledCarrinhoImg>
         <StyledCarrinhoParagrafo>
