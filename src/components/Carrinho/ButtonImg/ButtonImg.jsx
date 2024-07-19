@@ -16,6 +16,9 @@ export const StyledContainerButtonCart = styled.div`
   border: 1px solid hsl(7, 20%, 60%);
   cursor: pointer;
   transition: 0.2s;
+  &:hover {
+    filter: grayscale(0.5);
+  }
 `;
 
 export const StyledTextoButtonCart = styled.span`
