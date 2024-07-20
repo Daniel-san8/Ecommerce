@@ -12,6 +12,10 @@ export const StyledModalCart = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  gap: 1rem;
+
+  padding: 2rem 1rem;
 `;
 
 export const StyledParagraphModal = styled.p`
