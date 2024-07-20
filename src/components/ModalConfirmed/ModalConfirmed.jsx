@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledDivModal, StyledModalCart } from "./StyledModalConfirmed";
+import {
+  StyledDivModal,
+  StyledModalCart,
+  StyledParagraphModal,
+} from "./StyledModalConfirmed";
 
 const ModalConfirmed = () => {
   return (
@@ -11,7 +15,9 @@ const ModalConfirmed = () => {
           <h1>
             Order <br /> Confirmed
           </h1>
-          <p>We hope you enjoy your food!</p>
+          <StyledParagraphModal>
+            We hope you enjoy your food!
+          </StyledParagraphModal>
         </StyledModalCart>
       </StyledDivModal>
     </>
