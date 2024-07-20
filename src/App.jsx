@@ -3,13 +3,15 @@ import "./styles/geral.css";
 import { GlobalStorage } from "./GlobalContext";
 import Produtos from "./components/Produtos/Produtos";
 import Carrinho from "./components/Carrinho/Carrinho";
+import ModalConfirmed from "./components/ModalConfirmed/ModalConfirmed";
 
 function App() {
   return (
     <GlobalStorage>
       <h1>Desserts</h1>
-      <Produtos />
-      <Carrinho />
+      {/* <Produtos />
+      <Carrinho /> */}
+      <ModalConfirmed />
     </GlobalStorage>
   );
 }
