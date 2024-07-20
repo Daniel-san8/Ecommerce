@@ -24,3 +24,19 @@ const Carrinho = () => {
 };
 
 export default Carrinho;
+
+{
+  /* <>
+      {totalItems === 0 ? (
+        <StyledCarrinhoContainer>
+          <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
+          <StyledCarrinhoDiv>
+            <StyledCarrinhoImg src="./src/assets/images/illustration-empty-cart.svg"></StyledCarrinhoImg>
+            <StyledCarrinhoParagrafo>
+              Your added items will appear here
+            </StyledCarrinhoParagrafo>
+          </StyledCarrinhoDiv>
+        </StyledCarrinhoContainer>
+      ) : null}
+    </> */
+}
