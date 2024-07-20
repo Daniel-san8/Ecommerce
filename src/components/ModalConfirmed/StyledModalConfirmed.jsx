@@ -21,3 +21,7 @@ export const StyledModalCart = styled.div`
 export const StyledParagraphModal = styled.p`
   color: hsl(14, 25%, 72%);
 `;
+
+export const StyledOrderModal = styled.span`
+  color: hsl(12, 20%, 44%);
+`;

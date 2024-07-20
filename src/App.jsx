@@ -9,9 +9,9 @@ function App() {
   return (
     <GlobalStorage>
       <h1 className="titulo">Desserts</h1>
-      {/* <Produtos />
-      <Carrinho /> */}
-      <ModalConfirmed />
+      <Produtos />
+      <Carrinho />
+      {/* <ModalConfirmed /> */}
     </GlobalStorage>
   );
 }
