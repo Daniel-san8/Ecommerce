@@ -8,7 +8,7 @@ import ModalConfirmed from "./components/ModalConfirmed/ModalConfirmed";
 function App() {
   return (
     <GlobalStorage>
-      <h1>Desserts</h1>
+      <h1 className="titulo">Desserts</h1>
       {/* <Produtos />
       <Carrinho /> */}
       <ModalConfirmed />

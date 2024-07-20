@@ -11,7 +11,10 @@ const ModalConfirmed = () => {
     <>
       <StyledDivModal>
         <StyledModalCart>
-          <img src="./src/assets/images/icon-order-confirmed.svg" />
+          <img
+            style={{ width: "35px", height: "35px" }}
+            src="./src/assets/images/icon-order-confirmed.svg"
+          />
           <h1>
             Order <br /> Confirmed
           </h1>
