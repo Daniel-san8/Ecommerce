@@ -48,11 +48,20 @@ export const GlobalStorage = ({ children }) => {
     setTotalItems(totalItems - 1);
   }
 
+  let quantidade = 1;
+
   //Estilo do Cart button
 
   return (
     <GlobalContext.Provider
-      value={{ dados, larguraUsuario, totalItems, setarTotal, decremento }}
+      value={{
+        dados,
+        larguraUsuario,
+        totalItems,
+        setarTotal,
+        decremento,
+        quantidade,
+      }}
     >
       {children}
     </GlobalContext.Provider>
