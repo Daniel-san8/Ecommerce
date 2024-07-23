@@ -4,16 +4,20 @@ import {
   StyledButtonOnProductIncDec,
   StyledspanIncDec,
 } from "./ButtonImg/ButtonImg";
+import { GlobalContext } from "../../GlobalContext";
 
-const CarrinhoOnProduct = ({ quantidade }) => {
-  const [itens, setItens] = React.useState(quantidade);
+const CarrinhoOnProduct = ({ quantidadeItens }) => {
+  const { setarTotal, decremento } = React.useContext(GlobalContext);
+  const [itens, setItens] = React.useState(quantidadeItens);
 
   function aumentaQuantidade() {
     setItens(itens + 1);
+    setarTotal();
   }
 
   function diminuiQuantidade() {
     setItens(itens - 1);
+    decremento();
   }
 
   return (

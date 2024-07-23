@@ -6,13 +6,11 @@ import {
 import { GlobalContext } from "../../GlobalContext";
 
 const CarrinhoPronto = () => {
-  const { setarTotal, setarQuantidadeGlobal, quantidade } =
-    React.useContext(GlobalContext);
+  const { setarTotal, setarQuantidadeGlobal } = React.useContext(GlobalContext);
 
   function setarWrapper() {
     setarQuantidadeGlobal();
     setarTotal();
-    console.log(quantidade);
   }
 
   return (

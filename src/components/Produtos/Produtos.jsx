@@ -35,7 +35,7 @@ const Produtos = () => {
             {quantidade === 0 ? (
               <CarrinhoPronto />
             ) : (
-              <CarrinhoOnProduct quantidade={quantidade} />
+              <CarrinhoOnProduct quantidadeItens={quantidade} />
             )}
             {dados && (
               <StyledDadosImagem>
