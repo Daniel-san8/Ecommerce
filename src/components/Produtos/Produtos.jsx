@@ -13,8 +13,7 @@ import CarrinhoPronto from "../Carrinho/CarrinhoPronto";
 import CarrinhoOnProduct from "../Carrinho/CarrinhoOnProduct";
 
 const Produtos = () => {
-  const { dados, totalItems, larguraUsuario, quantidade } =
-    React.useContext(GlobalContext);
+  const { dados, larguraUsuario, quantidade } = React.useContext(GlobalContext);
   if (dados === null) return null;
   return (
     <>
@@ -32,11 +31,12 @@ const Produtos = () => {
                   : null
               }
             ></StyledImg>
-            {quantidade > 0 ? (
-              <CarrinhoOnProduct quantidadeItens={quantidade} />
-            ) : (
+            {quantidade === 0 ? (
               <CarrinhoPronto />
+            ) : (
+              <CarrinhoOnProduct quantidadeItens={0} />
             )}
+            {}
             {dados && (
               <StyledDadosImagem>
                 {category && <StyledCategory>{category}</StyledCategory>}

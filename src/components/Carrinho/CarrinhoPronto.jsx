@@ -4,21 +4,31 @@ import {
   StyledTextoButtonCart,
 } from "./ButtonImg/ButtonImg";
 import { GlobalContext } from "../../GlobalContext";
+import CarrinhoOnProduct from "./CarrinhoOnProduct";
 
 const CarrinhoPronto = () => {
-  const { setarTotal, setarQuantidadeGlobal, quantidade } =
-    React.useContext(GlobalContext);
+  const { setarTotal, quantidade } = React.useContext(GlobalContext);
+  const [itemCarrinho, setItemCarrinho] = React.useState(quantidade);
 
   function setarWrapper() {
-    setarQuantidadeGlobal();
+    setItemCarrinho(itemCarrinho + 1);
     setarTotal();
   }
 
   return (
-    <StyledContainerButtonCart $quantidade={quantidade} onClick={setarWrapper}>
-      <img src="./src/assets/images/icon-add-to-cart.svg" />
-      <StyledTextoButtonCart>Add to Cart</StyledTextoButtonCart>
-    </StyledContainerButtonCart>
+    <>
+      {itemCarrinho === 0 ? (
+        <StyledContainerButtonCart
+          $quantidade={itemCarrinho}
+          onClick={setarWrapper}
+        >
+          <img src="./src/assets/images/icon-add-to-cart.svg" />
+          <StyledTextoButtonCart>Add to Cart</StyledTextoButtonCart>
+        </StyledContainerButtonCart>
+      ) : (
+        <CarrinhoOnProduct quantidadeItens={1} />
+      )}
+    </>
   );
 };
 
