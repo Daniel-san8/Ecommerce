@@ -32,10 +32,10 @@ const Produtos = () => {
                   : null
               }
             ></StyledImg>
-            {quantidade === 0 ? (
-              <CarrinhoPronto />
-            ) : (
+            {quantidade > 0 ? (
               <CarrinhoOnProduct quantidadeItens={quantidade} />
+            ) : (
+              <CarrinhoPronto />
             )}
             {dados && (
               <StyledDadosImagem>

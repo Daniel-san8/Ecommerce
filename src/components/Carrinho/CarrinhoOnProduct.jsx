@@ -21,7 +21,7 @@ const CarrinhoOnProduct = ({ quantidadeItens }) => {
   }
 
   return (
-    <StyledButtonOnProduct>
+    <StyledButtonOnProduct $itens={itens}>
       <StyledButtonOnProductIncDec>
         <StyledspanIncDec onClick={aumentaQuantidade}>
           <img src="./src/assets/images/icon-increment-quantity.svg" />

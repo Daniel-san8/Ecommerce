@@ -6,7 +6,8 @@ import {
 import { GlobalContext } from "../../GlobalContext";
 
 const CarrinhoPronto = () => {
-  const { setarTotal, setarQuantidadeGlobal } = React.useContext(GlobalContext);
+  const { setarTotal, setarQuantidadeGlobal, quantidade } =
+    React.useContext(GlobalContext);
 
   function setarWrapper() {
     setarQuantidadeGlobal();
@@ -14,7 +15,7 @@ const CarrinhoPronto = () => {
   }
 
   return (
-    <StyledContainerButtonCart onClick={setarWrapper}>
+    <StyledContainerButtonCart $quantidade={quantidade} onClick={setarWrapper}>
       <img src="./src/assets/images/icon-add-to-cart.svg" />
       <StyledTextoButtonCart>Add to Cart</StyledTextoButtonCart>
     </StyledContainerButtonCart>

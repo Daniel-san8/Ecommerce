@@ -54,6 +54,10 @@ export const GlobalStorage = ({ children }) => {
     setarQuantidade(quantidade + 1);
   }
 
+  function tirarQuantidadeGlobal() {
+    setarQuantidade(quantidade - 1);
+  }
+
   //Estilo do Cart button
 
   return (
@@ -66,6 +70,7 @@ export const GlobalStorage = ({ children }) => {
         decremento,
         quantidade,
         setarQuantidadeGlobal,
+        tirarQuantidadeGlobal,
       }}
     >
       {children}
