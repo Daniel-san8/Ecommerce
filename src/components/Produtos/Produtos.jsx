@@ -31,12 +31,8 @@ const Produtos = () => {
                   : null
               }
             ></StyledImg>
-            {quantidade === 0 ? (
-              <CarrinhoPronto />
-            ) : (
-              <CarrinhoOnProduct quantidadeItens={0} />
-            )}
-            {}
+            {<CarrinhoPronto quantidade={0} />}
+
             {dados && (
               <StyledDadosImagem>
                 {category && <StyledCategory>{category}</StyledCategory>}

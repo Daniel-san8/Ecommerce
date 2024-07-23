@@ -8,7 +8,7 @@ export const StyledContainerButtonCart = styled.div`
   position: absolute;
   bottom: 130px;
   right: 25%;
-  display: ${(props) => (props.$quantidade === 0 ? "flex" : "none")};
+  display: ${(props) => (props.$quantidade <= 0 ? "flex" : "none")};
   justify-content: center;
   align-items: center;
   gap: 1rem;
