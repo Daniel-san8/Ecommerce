@@ -4,17 +4,16 @@ import {
   StyledButtonOnProductIncDec,
   StyledspanIncDec,
 } from "./ButtonImg/ButtonImg";
-import { GlobalContext } from "../../GlobalContext";
 
 const CarrinhoOnProduct = ({ quantidade }) => {
-  const [itens, setItens] = React.useState(1);
+  const [itens, setItens] = React.useState(quantidade);
 
   function aumentaQuantidade() {
-    quantidade + 1;
+    setItens(itens + 1);
   }
 
   function diminuiQuantidade() {
-    quantidade - 1;
+    setItens(itens - 1);
   }
 
   return (
@@ -23,7 +22,7 @@ const CarrinhoOnProduct = ({ quantidade }) => {
         <StyledspanIncDec onClick={aumentaQuantidade}>
           <img src="./src/assets/images/icon-increment-quantity.svg" />
         </StyledspanIncDec>
-        <span>{quantidade}</span>
+        <span>{itens}</span>
         <StyledspanIncDec onClick={diminuiQuantidade}>
           <img src="./src/assets/images/icon-decrement-quantity.svg" />
         </StyledspanIncDec>

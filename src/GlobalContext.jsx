@@ -48,7 +48,11 @@ export const GlobalStorage = ({ children }) => {
     setTotalItems(totalItems - 1);
   }
 
-  let quantidade = 1;
+  const [quantidade, setarQuantidade] = React.useState(0);
+
+  function setarQuantidadeGlobal() {
+    setarQuantidade(quantidade + 1);
+  }
 
   //Estilo do Cart button
 
@@ -61,6 +65,7 @@ export const GlobalStorage = ({ children }) => {
         setarTotal,
         decremento,
         quantidade,
+        setarQuantidadeGlobal,
       }}
     >
       {children}
