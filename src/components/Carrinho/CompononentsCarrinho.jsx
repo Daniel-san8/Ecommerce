@@ -28,3 +28,42 @@ export const StyledCarrinhoParagrafo = styled.p`
   color: hsl(12, 20%, 44%);
   font-weight: 600;
 `;
+
+export const StyledDivCarrinhoProduto = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const StyledDivCarrinhoProdutoItens = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.8rem;
+`;
+
+export const StyledTituloProduto = styled.span`
+  font-weight: 600;
+`;
+
+export const StyledQuantidadeItens = styled.span`
+  color: hsl(14, 86%, 42%);
+  font-weight: 600;
+`;
+
+export const StyledDivQuantidades = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+export const StyledSpanUm = styled.span`
+  color: hsl(7, 20%, 60%);
+`;
+export const StyledSpanDois = styled.span`
+  color: hsl(7, 20%, 60%);
+  font-weight: 600;
+`;
+
+export const StyledImgItens = styled.img`
+  width: 20px;
+  height: 20px;
+`;
