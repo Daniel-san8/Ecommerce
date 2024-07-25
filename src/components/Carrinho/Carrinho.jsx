@@ -17,7 +17,14 @@ import {
 import { GlobalContext } from "../../GlobalContext";
 
 const Carrinho = () => {
-  const { totalItems } = React.useContext(GlobalContext);
+  const {
+    totalItems,
+    quantidadeDoProduto,
+    precoDoProduto,
+    nomeDoProduto,
+    dados,
+  } = React.useContext(GlobalContext);
+  if (dados === null) return null;
   return (
     <>
       {totalItems === 0 ? (
@@ -35,11 +42,16 @@ const Carrinho = () => {
           <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
           <StyledDivCarrinhoProduto>
             <StyledDivCarrinhoProdutoItens>
-              <StyledTituloProduto>Classic Tiramisu</StyledTituloProduto>
+              <StyledTituloProduto>{nomeDoProduto}</StyledTituloProduto>
               <StyledDivQuantidades>
-                <StyledQuantidadeItens>1x</StyledQuantidadeItens>
+                <StyledQuantidadeItens>
+                  {quantidadeDoProduto}x
+                </StyledQuantidadeItens>
                 <StyledSpanUm>
-                  @ $5.50 <StyledSpanDois>$5.50</StyledSpanDois>
+                  @ {precoDoProduto.toFixed(2)}{" "}
+                  <StyledSpanDois>
+                    ${(precoDoProduto * quantidadeDoProduto).toFixed(2)}
+                  </StyledSpanDois>
                 </StyledSpanUm>
               </StyledDivQuantidades>
             </StyledDivCarrinhoProdutoItens>

@@ -6,20 +6,27 @@ import {
 import { GlobalContext } from "../../GlobalContext";
 import CarrinhoOnProduct from "./CarrinhoOnProduct";
 
-const CarrinhoPronto = ({ quantidade }) => {
-  const { setarTotal, decremento } = React.useContext(GlobalContext);
+const CarrinhoPronto = ({ quantidade, id }) => {
+  const {
+    setarTotal,
+    decremento,
+    adicionaProdutosNoCarrinho,
+    setQuantidadeDoProduto,
+  } = React.useContext(GlobalContext);
   const [itemCarrinho, setItemCarrinho] = React.useState(quantidade);
-  const [itens, setItens] = React.useState(1);
+  const [itens, setItens] = React.useState(0);
 
   function setarWrapper() {
     setItemCarrinho(1);
     setItens(1);
     setarTotal();
+    adicionaProdutosNoCarrinho(id, itens);
   }
 
   function aumentaQuantidade() {
     setItens(itens + 1);
     setarTotal();
+    adicionaProdutosNoCarrinho(id, itens);
   }
 
   function diminuiQuantidade() {
@@ -28,6 +35,7 @@ const CarrinhoPronto = ({ quantidade }) => {
       setItemCarrinho(0);
     }
     decremento();
+    setQuantidadeDoProduto((valorAnterior) => valorAnterior - 1);
   }
 
   return (

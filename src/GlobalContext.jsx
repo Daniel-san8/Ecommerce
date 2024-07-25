@@ -60,6 +60,18 @@ export const GlobalStorage = ({ children }) => {
 
   //Estilo do Cart button
 
+  let [nomeDoProduto, setNomeDoProduto] = React.useState(null);
+  let [precoDoProduto, setPrecoDoProduto] = React.useState(null);
+  let [quantidadeDoProduto, setQuantidadeDoProduto] = React.useState(0);
+
+  function adicionaProdutosNoCarrinho(id, quantidade) {
+    if (dados[id].name && dados[id].price !== null) {
+      setNomeDoProduto(dados[id].name);
+      setPrecoDoProduto(dados[id].price);
+      setQuantidadeDoProduto(quantidade + 1);
+    }
+  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -71,6 +83,13 @@ export const GlobalStorage = ({ children }) => {
         quantidade,
         setarQuantidadeGlobal,
         tirarQuantidadeGlobal,
+        adicionaProdutosNoCarrinho,
+        setNomeDoProduto,
+        setPrecoDoProduto,
+        setQuantidadeDoProduto,
+        quantidadeDoProduto,
+        precoDoProduto,
+        nomeDoProduto,
       }}
     >
       {children}

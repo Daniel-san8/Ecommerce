@@ -68,4 +68,5 @@ export const StyledImgItens = styled.img`
   width: 20px;
   height: 20px;
   padding: 0 1.5rem;
+  cursor: pointer;
 `;
