@@ -64,10 +64,11 @@ export const GlobalStorage = ({ children }) => {
   let [precoDoProduto, setPrecoDoProduto] = React.useState(null);
   let [quantidadeDoProduto, setQuantidadeDoProduto] = React.useState(0);
 
-  function adicionaProdutosNoCarrinho(id) {
+  function adicionaProdutosNoCarrinho(id, quantidade) {
     if (dados[id].name && dados[id].price !== null) {
       setNomeDoProduto(dados[id].name);
       setPrecoDoProduto(dados[id].price);
+      setQuantidadeDoProduto(quantidade + 1);
     }
   }
 
@@ -85,6 +86,8 @@ export const GlobalStorage = ({ children }) => {
         adicionaProdutosNoCarrinho,
         setNomeDoProduto,
         setPrecoDoProduto,
+        setQuantidadeDoProduto,
+        quantidadeDoProduto,
         precoDoProduto,
         nomeDoProduto,
       }}
