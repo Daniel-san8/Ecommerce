@@ -16,14 +16,9 @@ import {
 } from "./CompononentsCarrinho";
 import { GlobalContext } from "../../GlobalContext";
 
-const Carrinho = () => {
-  const {
-    totalItems,
-    quantidadeDoProduto,
-    precoDoProduto,
-    nomeDoProduto,
-    dados,
-  } = React.useContext(GlobalContext);
+const Carrinho = ({ quantidadeDosItens, setQuantidadeDosItens }) => {
+  const { totalItems, precoDoProduto, nomeDoProduto, dados } =
+    React.useContext(GlobalContext);
   if (dados === null) return null;
   return (
     <>
@@ -45,12 +40,12 @@ const Carrinho = () => {
               <StyledTituloProduto>{nomeDoProduto}</StyledTituloProduto>
               <StyledDivQuantidades>
                 <StyledQuantidadeItens>
-                  {quantidadeDoProduto}x
+                  {quantidadeDosItens}x
                 </StyledQuantidadeItens>
                 <StyledSpanUm>
                   @ {precoDoProduto.toFixed(2)}{" "}
                   <StyledSpanDois>
-                    ${(precoDoProduto * quantidadeDoProduto).toFixed(2)}
+                    ${(precoDoProduto * quantidadeDosItens).toFixed(2)}
                   </StyledSpanDois>
                 </StyledSpanUm>
               </StyledDivQuantidades>
