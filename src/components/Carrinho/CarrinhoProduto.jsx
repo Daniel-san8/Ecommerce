@@ -12,13 +12,7 @@ import {
   StyledTituloProduto,
 } from "./CompononentsCarrinho";
 
-const CarrinhoProduto = ({
-  totalItems,
-  nomeDoProduto,
-  quantidadeDoProduto,
-  precoDoProduto,
-  itensNoCarrinho,
-}) => {
+const CarrinhoProduto = ({ totalItems, itensNoCarrinho }) => {
   return (
     <>
       <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
