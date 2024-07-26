@@ -22,9 +22,9 @@ const CarrinhoProduto = ({
   return (
     <>
       <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
-      {itensNoCarrinho.map(({ name, price }, index) => {
+      {itensNoCarrinho.map(({ name, price, quantidade }, index) => {
         const validPrice = Number(price) || 0;
-        const validQuantidade = Number(quantidadeDoProduto) || 0;
+        const validQuantidade = Number(quantidade) || 0;
         return (
           <StyledCarrinhoContainer key={index}>
             <StyledDivCarrinhoProduto>

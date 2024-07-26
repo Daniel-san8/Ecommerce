@@ -63,29 +63,32 @@ export const GlobalStorage = ({ children }) => {
   let [nomeDoProduto, setNomeDoProduto] = React.useState(null);
   let [precoDoProduto, setPrecoDoProduto] = React.useState(null);
   let [quantidadeDoProduto, setQuantidadeDoProduto] = React.useState(0);
-  let [itensNoCarrinho, setItensNoCarrinho] = React.useState([
-    { name: null, price: null },
-  ]);
+  const [itensNoCarrinho, setItensNoCarrinho] = React.useState([]);
 
-  function adicionaProdutosNoCarrinho(id, quantidade) {
-    if (dados[id].name && dados[id].price !== null) {
-      setNomeDoProduto(dados[id].name);
-      setPrecoDoProduto(dados[id].price);
-      setQuantidadeDoProduto(quantidade + 1);
-    }
+  function adicionaProdutosNoCarrinho(id) {
+    const produto = dados.find((item) => item.id === id);
+    if (!produto) return;
 
-    if (
-      quantidadeDoProduto >= 0 &&
-      !itensNoCarrinho.some((item) => item.name === dados[id].name)
-    ) {
-      setItensNoCarrinho((prevItensNoCarrinho) => [
-        ...prevItensNoCarrinho,
-        {
-          name: dados[id].name,
-          price: dados[id].price,
-        },
-      ]);
-    }
+    setItensNoCarrinho((prevItensNoCarrinho) => {
+      const itemNoCarrinho = prevItensNoCarrinho.find((item) => item.id === id);
+
+      if (itemNoCarrinho) {
+        return prevItensNoCarrinho.map((item) =>
+          item.id === id ? { ...item, quantidade: item.quantidade + 1 } : item
+        );
+      } else {
+        return [
+          ...prevItensNoCarrinho,
+          {
+            id: produto.id,
+            name: produto.name,
+            price: produto.price,
+            quantidade: 1,
+          },
+        ];
+      }
+    });
+    setarTotal();
   }
 
   return (
