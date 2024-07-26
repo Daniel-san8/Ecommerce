@@ -10,7 +10,7 @@ function App() {
     <GlobalStorage>
       <h1 className="titulo">Desserts</h1>
       <Produtos />
-      <Carrinho />
+      {/* <Carrinho /> */}
       {/* <ModalConfirmed /> */}
     </GlobalStorage>
   );

@@ -10,6 +10,7 @@ import {
 } from "./ComponentsImagem";
 
 import CarrinhoPronto from "../Carrinho/CarrinhoPronto";
+import Carrinho from "../Carrinho/Carrinho";
 
 const Produtos = () => {
   const { dados, larguraUsuario } = React.useContext(GlobalContext);
@@ -42,6 +43,7 @@ const Produtos = () => {
           </StyledDivImg>
         );
       })}
+      <Carrinho />
     </>
   );
 };

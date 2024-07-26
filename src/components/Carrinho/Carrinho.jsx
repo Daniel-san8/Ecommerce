@@ -37,28 +37,7 @@ const Carrinho = () => {
             </StyledCarrinhoParagrafo>
           </StyledCarrinhoDiv>
         </StyledCarrinhoContainer>
-      ) : (
-        <StyledCarrinhoContainer>
-          <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
-          <StyledDivCarrinhoProduto>
-            <StyledDivCarrinhoProdutoItens>
-              <StyledTituloProduto>{nomeDoProduto}</StyledTituloProduto>
-              <StyledDivQuantidades>
-                <StyledQuantidadeItens>
-                  {quantidadeDoProduto}x
-                </StyledQuantidadeItens>
-                <StyledSpanUm>
-                  @ {precoDoProduto.toFixed(2)}{" "}
-                  <StyledSpanDois>
-                    ${(precoDoProduto * quantidadeDoProduto).toFixed(2)}
-                  </StyledSpanDois>
-                </StyledSpanUm>
-              </StyledDivQuantidades>
-            </StyledDivCarrinhoProdutoItens>
-            <StyledImgItens src="./src/assets/images/icon-remove-item.svg" />
-          </StyledDivCarrinhoProduto>
-        </StyledCarrinhoContainer>
-      )}
+      ) : null}
     </>
   );
 };
