@@ -11,10 +11,21 @@ import {
 
 import CarrinhoPronto from "../Carrinho/CarrinhoPronto";
 import Carrinho from "../Carrinho/Carrinho";
+import CarrinhoProduto from "../Carrinho/CarrinhoProduto";
 
 const Produtos = () => {
-  const { dados, larguraUsuario } = React.useContext(GlobalContext);
+  const {
+    dados,
+    larguraUsuario,
+    quantidadeDoProduto,
+    precoDoProduto,
+    nomeDoProduto,
+    itensNoCarrinho,
+    totalItems,
+  } = React.useContext(GlobalContext);
+
   if (dados === null) return null;
+  console.log(itensNoCarrinho);
   return (
     <>
       {dados.map(({ image, category, name, price, id }) => {
@@ -28,7 +39,7 @@ const Produtos = () => {
                   ? image.tablet
                   : larguraUsuario > 769
                   ? image.desktop
-                  : null
+                  : image.thumbnail
               }
             ></StyledImg>
             {<CarrinhoPronto quantidade={0} id={id} />}
@@ -43,7 +54,17 @@ const Produtos = () => {
           </StyledDivImg>
         );
       })}
-      <Carrinho />
+      {totalItems === 0 ? (
+        <Carrinho />
+      ) : (
+        <CarrinhoProduto
+          quantidadeDoProduto={quantidadeDoProduto}
+          precoDoProduto={precoDoProduto}
+          nomeDoProduto={nomeDoProduto}
+          totalItems={totalItems}
+          itensNoCarrinho={itensNoCarrinho}
+        />
+      )}
     </>
   );
 };

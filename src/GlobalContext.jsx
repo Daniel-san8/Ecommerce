@@ -63,12 +63,28 @@ export const GlobalStorage = ({ children }) => {
   let [nomeDoProduto, setNomeDoProduto] = React.useState(null);
   let [precoDoProduto, setPrecoDoProduto] = React.useState(null);
   let [quantidadeDoProduto, setQuantidadeDoProduto] = React.useState(0);
+  let [itensNoCarrinho, setItensNoCarrinho] = React.useState([
+    { name: null, price: null },
+  ]);
 
   function adicionaProdutosNoCarrinho(id, quantidade) {
     if (dados[id].name && dados[id].price !== null) {
       setNomeDoProduto(dados[id].name);
       setPrecoDoProduto(dados[id].price);
       setQuantidadeDoProduto(quantidade + 1);
+    }
+
+    if (
+      quantidadeDoProduto >= 0 &&
+      !itensNoCarrinho.some((item) => item.name === dados[id].name)
+    ) {
+      setItensNoCarrinho((prevItensNoCarrinho) => [
+        ...prevItensNoCarrinho,
+        {
+          name: dados[id].name,
+          price: dados[id].price,
+        },
+      ]);
     }
   }
 
@@ -90,6 +106,7 @@ export const GlobalStorage = ({ children }) => {
         quantidadeDoProduto,
         precoDoProduto,
         nomeDoProduto,
+        itensNoCarrinho,
       }}
     >
       {children}

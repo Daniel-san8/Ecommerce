@@ -4,6 +4,7 @@ import {
   StyledDivCarrinhoProduto,
   StyledDivCarrinhoProdutoItens,
   StyledDivQuantidades,
+  StyledImgItens,
   StyledQuantidadeItens,
   StyledSpanDois,
   StyledSpanUm,
@@ -11,31 +12,41 @@ import {
   StyledTituloProduto,
 } from "./CompononentsCarrinho";
 
-const CarrinhoProduto = () => {
+const CarrinhoProduto = ({
+  totalItems,
+  nomeDoProduto,
+  quantidadeDoProduto,
+  precoDoProduto,
+  itensNoCarrinho,
+}) => {
   return (
     <>
-      (
-      <StyledCarrinhoContainer>
-        <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
-        <StyledDivCarrinhoProduto>
-          <StyledDivCarrinhoProdutoItens>
-            <StyledTituloProduto>{nomeDoProduto}</StyledTituloProduto>
-            <StyledDivQuantidades>
-              <StyledQuantidadeItens>
-                {quantidadeDoProduto}x
-              </StyledQuantidadeItens>
-              <StyledSpanUm>
-                @ {precoDoProduto.toFixed(2)}{" "}
-                <StyledSpanDois>
-                  ${(precoDoProduto * quantidadeDoProduto).toFixed(2)}
-                </StyledSpanDois>
-              </StyledSpanUm>
-            </StyledDivQuantidades>
-          </StyledDivCarrinhoProdutoItens>
-          <StyledImgItens src="./src/assets/images/icon-remove-item.svg" />
-        </StyledDivCarrinhoProduto>
-      </StyledCarrinhoContainer>
-      )
+      <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
+      {itensNoCarrinho.map(({ name, price }, index) => {
+        const validPrice = Number(price) || 0;
+        const validQuantidade = Number(quantidadeDoProduto) || 0;
+        return (
+          <StyledCarrinhoContainer key={index}>
+            <StyledDivCarrinhoProduto>
+              <StyledDivCarrinhoProdutoItens>
+                <StyledTituloProduto>{name}</StyledTituloProduto>
+                <StyledDivQuantidades>
+                  <StyledQuantidadeItens>
+                    {validQuantidade}x
+                  </StyledQuantidadeItens>
+                  <StyledSpanUm>
+                    @ {validPrice.toFixed(2)}{" "}
+                    <StyledSpanDois>
+                      ${(validPrice * validQuantidade).toFixed(2)}
+                    </StyledSpanDois>
+                  </StyledSpanUm>
+                </StyledDivQuantidades>
+              </StyledDivCarrinhoProdutoItens>
+              <StyledImgItens src="./src/assets/images/icon-remove-item.svg" />
+            </StyledDivCarrinhoProduto>
+          </StyledCarrinhoContainer>
+        );
+      })}
     </>
   );
 };
