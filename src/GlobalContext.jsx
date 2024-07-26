@@ -91,6 +91,21 @@ export const GlobalStorage = ({ children }) => {
     setarTotal();
   }
 
+  function tirarItem(id) {
+    const produto = dados.find((item) => item.id === id);
+    if (!produto) return;
+
+    setItensNoCarrinho((prevItensNoCarrinho) => {
+      const itemNoCarrinho = prevItensNoCarrinho.find((item) => item.id === id);
+
+      if (itemNoCarrinho) {
+        return prevItensNoCarrinho.map((item) =>
+          item.id === id ? { ...item, quantidade: item.quantidade - 1 } : item
+        );
+      }
+    });
+  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -110,6 +125,7 @@ export const GlobalStorage = ({ children }) => {
         precoDoProduto,
         nomeDoProduto,
         itensNoCarrinho,
+        tirarItem,
       }}
     >
       {children}

@@ -13,16 +13,21 @@ const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
     adicionaProdutosNoCarrinho,
     setQuantidadeDoProduto,
     itensNoCarrinho,
+    tirarItem,
   } = React.useContext(GlobalContext);
 
   const [itemCarrinho, setItemCarrinho] = React.useState(quantidadeCarrinho);
   const itemNoCarrinho = itensNoCarrinho.find((item) => item.id === id);
-
   const [itens, setItens] = React.useState(0);
+
+  React.useEffect(() => {
+    if (itemNoCarrinho) {
+      setItens(itemNoCarrinho.quantidade);
+    }
+  }, [itemNoCarrinho]);
 
   function setarWrapper() {
     setItemCarrinho(1);
-    setItens(1);
     setarTotal();
     adicionaProdutosNoCarrinho(id, itens);
   }
@@ -34,7 +39,7 @@ const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
   }
 
   function diminuiQuantidade() {
-    setItens(itens - 1);
+    tirarItem(id);
     if (itens === 1) {
       setItemCarrinho(0);
     }

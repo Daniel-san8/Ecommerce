@@ -20,7 +20,7 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho }) => {
         {itensNoCarrinho.map(({ name, price, quantidade }, index) => {
           const validPrice = Number(price) || 0;
           const validQuantidade = Number(quantidade) || 0;
-          return (
+          return quantidade > 0 ? (
             <StyledDivCarrinhoProduto key={index}>
               <StyledDivCarrinhoProdutoItens>
                 <StyledTituloProduto>{name}</StyledTituloProduto>
@@ -38,7 +38,7 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho }) => {
               </StyledDivCarrinhoProdutoItens>
               <StyledImgItens src="./src/assets/images/icon-remove-item.svg" />
             </StyledDivCarrinhoProduto>
-          );
+          ) : null;
         })}
       </StyledCarrinhoContainer>
     </>
