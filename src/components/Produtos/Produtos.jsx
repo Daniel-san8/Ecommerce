@@ -25,7 +25,6 @@ const Produtos = () => {
   } = React.useContext(GlobalContext);
 
   if (dados === null) return null;
-  console.log(itensNoCarrinho);
   return (
     <>
       {dados.map(({ image, category, name, price, id }) => {
@@ -42,7 +41,7 @@ const Produtos = () => {
                   : image.thumbnail
               }
             ></StyledImg>
-            {<CarrinhoPronto quantidade={0} id={id} />}
+            {<CarrinhoPronto quantidadeCarrinho={0} id={id} />}
 
             {dados && (
               <StyledDadosImagem>

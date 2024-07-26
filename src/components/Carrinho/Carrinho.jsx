@@ -4,24 +4,14 @@ import {
   StyledCarrinhoDiv,
   StyledCarrinhoImg,
   StyledCarrinhoParagrafo,
-  StyledDivCarrinhoProduto,
-  StyledDivCarrinhoProdutoItens,
-  StyledDivQuantidades,
-  StyledImgItens,
-  StyledQuantidadeItens,
-  StyledSpanDois,
-  StyledSpanUm,
   StyledTituloCarrinho,
-  StyledTituloProduto,
 } from "./CompononentsCarrinho";
 import { GlobalContext } from "../../GlobalContext";
 
 const Carrinho = () => {
   const {
     totalItems,
-    quantidadeDoProduto,
-    precoDoProduto,
-    nomeDoProduto,
+
     dados,
   } = React.useContext(GlobalContext);
   if (dados === null) return null;

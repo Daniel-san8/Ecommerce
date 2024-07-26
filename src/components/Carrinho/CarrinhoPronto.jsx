@@ -6,14 +6,18 @@ import {
 import { GlobalContext } from "../../GlobalContext";
 import CarrinhoOnProduct from "./CarrinhoOnProduct";
 
-const CarrinhoPronto = ({ quantidade, id }) => {
+const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
   const {
     setarTotal,
     decremento,
     adicionaProdutosNoCarrinho,
     setQuantidadeDoProduto,
+    itensNoCarrinho,
   } = React.useContext(GlobalContext);
-  const [itemCarrinho, setItemCarrinho] = React.useState(quantidade);
+
+  const [itemCarrinho, setItemCarrinho] = React.useState(quantidadeCarrinho);
+  const itemNoCarrinho = itensNoCarrinho.find((item) => item.id === id);
+
   const [itens, setItens] = React.useState(0);
 
   function setarWrapper() {

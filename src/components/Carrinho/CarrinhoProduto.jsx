@@ -15,13 +15,13 @@ import {
 const CarrinhoProduto = ({ totalItems, itensNoCarrinho }) => {
   return (
     <>
-      <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
-      {itensNoCarrinho.map(({ name, price, quantidade }, index) => {
-        const validPrice = Number(price) || 0;
-        const validQuantidade = Number(quantidade) || 0;
-        return (
-          <StyledCarrinhoContainer key={index}>
-            <StyledDivCarrinhoProduto>
+      <StyledCarrinhoContainer>
+        <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
+        {itensNoCarrinho.map(({ name, price, quantidade }, index) => {
+          const validPrice = Number(price) || 0;
+          const validQuantidade = Number(quantidade) || 0;
+          return (
+            <StyledDivCarrinhoProduto key={index}>
               <StyledDivCarrinhoProdutoItens>
                 <StyledTituloProduto>{name}</StyledTituloProduto>
                 <StyledDivQuantidades>
@@ -38,9 +38,9 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho }) => {
               </StyledDivCarrinhoProdutoItens>
               <StyledImgItens src="./src/assets/images/icon-remove-item.svg" />
             </StyledDivCarrinhoProduto>
-          </StyledCarrinhoContainer>
-        );
-      })}
+          );
+        })}
+      </StyledCarrinhoContainer>
     </>
   );
 };
