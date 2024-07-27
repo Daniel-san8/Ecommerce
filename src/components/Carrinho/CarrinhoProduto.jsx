@@ -17,11 +17,11 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
     <>
       <StyledCarrinhoContainer>
         <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
-        {itensNoCarrinho.map(({ name, price, quantidade }, index) => {
+        {itensNoCarrinho.map(({ name, price, quantidade, id }) => {
           const validPrice = Number(price) || 0;
           const validQuantidade = Number(quantidade) || 0;
           return quantidade > 0 ? (
-            <StyledDivCarrinhoProduto key={index}>
+            <StyledDivCarrinhoProduto key={id}>
               <StyledDivCarrinhoProdutoItens>
                 <StyledTituloProduto>{name}</StyledTituloProduto>
                 <StyledDivQuantidades>
@@ -37,7 +37,7 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
                 </StyledDivQuantidades>
               </StyledDivCarrinhoProdutoItens>
               <StyledImgItens
-                onClick={() => tirarTodosItens(index)}
+                onClick={() => tirarTodosItens(id)}
                 src="./src/assets/images/icon-remove-item.svg"
               />
             </StyledDivCarrinhoProduto>

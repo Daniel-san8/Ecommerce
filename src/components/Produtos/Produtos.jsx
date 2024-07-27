@@ -17,7 +17,6 @@ const Produtos = () => {
   const {
     dados,
     larguraUsuario,
-    quantidadeDoProduto,
     precoDoProduto,
     nomeDoProduto,
     itensNoCarrinho,
@@ -29,6 +28,11 @@ const Produtos = () => {
   return (
     <>
       {dados.map(({ image, category, name, price, id }) => {
+        const itemNoCarrinho = itensNoCarrinho.find((item) => item.id === id);
+        let quantity = 0;
+        if (itemNoCarrinho) {
+          quantity = itemNoCarrinho.quantidade;
+        }
         return (
           <StyledDivImg key={category}>
             <StyledImg
@@ -42,7 +46,7 @@ const Produtos = () => {
                   : image.thumbnail
               }
             ></StyledImg>
-            {<CarrinhoPronto quantidadeCarrinho={0} id={id} />}
+            {<CarrinhoPronto quantidadeCarrinho={quantity} id={id} />}
 
             {dados && (
               <StyledDadosImagem>
@@ -58,7 +62,6 @@ const Produtos = () => {
         <Carrinho />
       ) : (
         <CarrinhoProduto
-          quantidadeDoProduto={quantidadeDoProduto}
           precoDoProduto={precoDoProduto}
           nomeDoProduto={nomeDoProduto}
           totalItems={totalItems}

@@ -16,7 +16,6 @@ const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
     tirarItem,
   } = React.useContext(GlobalContext);
 
-  const [itemCarrinho, setItemCarrinho] = React.useState(quantidadeCarrinho);
   const itemNoCarrinho = itensNoCarrinho.find((item) => item.id === id);
   const [itens, setItens] = React.useState(0);
 
@@ -24,10 +23,9 @@ const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
     if (itemNoCarrinho) {
       setItens(itemNoCarrinho.quantidade);
     }
-  }, [itemNoCarrinho]);
+  }, [itemNoCarrinho, itensNoCarrinho]);
 
   function setarWrapper() {
-    setItemCarrinho(1);
     setarTotal();
     adicionaProdutosNoCarrinho(id, itens);
   }
@@ -40,18 +38,15 @@ const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
 
   function diminuiQuantidade() {
     tirarItem(id);
-    if (itens === 1) {
-      setItemCarrinho(0);
-    }
     decremento();
     setQuantidadeDoProduto((valorAnterior) => valorAnterior - 1);
   }
 
   return (
     <>
-      {itemCarrinho === 0 ? (
+      {quantidadeCarrinho === 0 ? (
         <StyledContainerButtonCart
-          $quantidade={itemCarrinho}
+          $quantidade={quantidadeCarrinho}
           onClick={setarWrapper}
         >
           <img src="./src/assets/images/icon-add-to-cart.svg" />
@@ -59,7 +54,7 @@ const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
         </StyledContainerButtonCart>
       ) : (
         <CarrinhoOnProduct
-          quantidadeItens={itens}
+          quantidadeItens={quantidadeCarrinho}
           aumentaQuantidade={aumentaQuantidade}
           diminuiQuantidade={diminuiQuantidade}
         />
