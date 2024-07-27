@@ -37,7 +37,7 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
                 </StyledDivQuantidades>
               </StyledDivCarrinhoProdutoItens>
               <StyledImgItens
-                onClick={() => tirarTodosItens(1)}
+                onClick={() => tirarTodosItens(index)}
                 src="./src/assets/images/icon-remove-item.svg"
               />
             </StyledDivCarrinhoProduto>

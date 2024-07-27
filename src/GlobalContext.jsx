@@ -112,14 +112,24 @@ export const GlobalStorage = ({ children }) => {
 
     setItensNoCarrinho((prevItensNoCarrinho) => {
       const itemNoCarrinho = prevItensNoCarrinho.find((item) => item.id === id);
-
       if (itemNoCarrinho) {
-        return prevItensNoCarrinho.map((item) =>
-          item.id === id ? { ...item, quantidade: (item.quantidade = 0) } : item
-        );
+        setTotalItems((previous) => {
+          return previous - itemNoCarrinho.quantidade;
+        });
       }
+      if (itemNoCarrinho) {
+        // Atualiza a quantidade do item para 0
+        const atualizados = prevItensNoCarrinho.map((item) =>
+          item.id === id ? { ...item, quantidade: 0 } : item
+        );
+
+        // Remove o item da lista
+        const novosProdutos = atualizados.filter((item) => item.id !== id);
+
+        return novosProdutos;
+      }
+      return prevItensNoCarrinho;
     });
-    decremento();
   }
 
   return (
