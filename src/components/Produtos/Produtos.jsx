@@ -22,6 +22,7 @@ const Produtos = () => {
     nomeDoProduto,
     itensNoCarrinho,
     totalItems,
+    tirarTodosItens,
   } = React.useContext(GlobalContext);
 
   if (dados === null) return null;
@@ -62,6 +63,7 @@ const Produtos = () => {
           nomeDoProduto={nomeDoProduto}
           totalItems={totalItems}
           itensNoCarrinho={itensNoCarrinho}
+          tirarTodosItens={tirarTodosItens}
         />
       )}
     </>

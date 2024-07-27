@@ -106,6 +106,22 @@ export const GlobalStorage = ({ children }) => {
     });
   }
 
+  function tirarTodosItens(id) {
+    const produto = dados.find((item) => item.id === id);
+    if (!produto) return;
+
+    setItensNoCarrinho((prevItensNoCarrinho) => {
+      const itemNoCarrinho = prevItensNoCarrinho.find((item) => item.id === id);
+
+      if (itemNoCarrinho) {
+        return prevItensNoCarrinho.map((item) =>
+          item.id === id ? { ...item, quantidade: (item.quantidade = 0) } : item
+        );
+      }
+    });
+    decremento();
+  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -126,6 +142,7 @@ export const GlobalStorage = ({ children }) => {
         nomeDoProduto,
         itensNoCarrinho,
         tirarItem,
+        tirarTodosItens,
       }}
     >
       {children}

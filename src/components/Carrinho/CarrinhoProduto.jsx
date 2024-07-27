@@ -12,7 +12,7 @@ import {
   StyledTituloProduto,
 } from "./CompononentsCarrinho";
 
-const CarrinhoProduto = ({ totalItems, itensNoCarrinho }) => {
+const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
   return (
     <>
       <StyledCarrinhoContainer>
@@ -36,7 +36,10 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho }) => {
                   </StyledSpanUm>
                 </StyledDivQuantidades>
               </StyledDivCarrinhoProdutoItens>
-              <StyledImgItens src="./src/assets/images/icon-remove-item.svg" />
+              <StyledImgItens
+                onClick={() => tirarTodosItens(1)}
+                src="./src/assets/images/icon-remove-item.svg"
+              />
             </StyledDivCarrinhoProduto>
           ) : null;
         })}
