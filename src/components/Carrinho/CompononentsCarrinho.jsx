@@ -70,3 +70,16 @@ export const StyledImgItens = styled.img`
   padding: 0 1.5rem;
   cursor: pointer;
 `;
+
+export const StyledSpanOneTotal = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1.5rem 0;
+`;
+
+export const StyledSpanTwoTotal = styled.span`
+  font-size: 1.5rem;
+  font-weight: bold;
+`;

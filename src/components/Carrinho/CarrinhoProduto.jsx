@@ -10,12 +10,13 @@ import {
   StyledSpanUm,
   StyledTituloCarrinho,
   StyledTituloProduto,
+  StyledSpanOneTotal,
+  StyledSpanTwoTotal,
 } from "./CompononentsCarrinho";
 
 const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
   let multiplicacaoValor = 0;
   let arr = 0;
-  console.log(itensNoCarrinho);
   if (itensNoCarrinho.length > 0) {
     arr = itensNoCarrinho.reduce((acc, item) => {
       if (item.price && item.quantidade) {
@@ -55,19 +56,9 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
             </StyledDivCarrinhoProduto>
           ) : null;
         })}
-        <span
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-around",
-            gap: "1rem",
-          }}
-        >
-          Order Total{" "}
-          <span style={{ fontSize: "2rem", fontWeight: "600" }}>
-            ${arr.toFixed(2)}
-          </span>
-        </span>
+        <StyledSpanOneTotal>
+          Order Total <StyledSpanTwoTotal>${arr.toFixed(2)}</StyledSpanTwoTotal>
+        </StyledSpanOneTotal>
       </StyledCarrinhoContainer>
     </>
   );
