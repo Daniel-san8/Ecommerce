@@ -7,10 +7,13 @@ export const StyledDivImg = styled.div`
 `;
 
 export const StyledImg = styled.img`
-  border-radius: 1rem;
+  border-radius: 0.6rem;
   max-width: 90%;
   margin: 2rem auto;
   display: block;
+  border: ${({ on }) =>
+    on > 0 ? "2px solid hsl(14, 86%, 42%)" : "2px solid transparent"};
+  transition: 0.3s;
 `;
 
 export const StyledDadosImagem = styled.div`

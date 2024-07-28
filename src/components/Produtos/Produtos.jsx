@@ -36,6 +36,7 @@ const Produtos = () => {
         return (
           <StyledDivImg key={category}>
             <StyledImg
+              on={quantity}
               src={
                 larguraUsuario <= 420
                   ? image.mobile

@@ -9,7 +9,7 @@ function App() {
     <GlobalStorage>
       <h1 className="titulo">Desserts</h1>
       <Produtos />
-      <ModalConfirmed />
+      {/* <ModalConfirmed /> */}
     </GlobalStorage>
   );
 }
