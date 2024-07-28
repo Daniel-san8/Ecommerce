@@ -77,9 +77,41 @@ export const StyledSpanOneTotal = styled.span`
   justify-content: space-around;
   gap: 1rem;
   padding: 1.5rem 0;
+  transition: 0.3s;
 `;
 
 export const StyledSpanTwoTotal = styled.span`
   font-size: 1.5rem;
   font-weight: bold;
+`;
+
+export const StyledDivCarbonNeutral = styled.div`
+  background-color: hsl(20, 50%, 98%);
+  padding: 1rem 0;
+  margin: 0 1.5rem;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+`;
+
+export const StyledDivButtonOrder = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+`;
+
+export const StyledAnchorButtonOrder = styled.a`
+  background-color: hsl(14, 86%, 42%);
+  text-decoration: none;
+  color: white;
+  padding: 1rem 4rem;
+  border-radius: 25px;
+  transition: 0.3s;
+  &:hover {
+    background-color: hsl(7, 86%, 42%);
+    transition: 0.3s;
+  }
 `;

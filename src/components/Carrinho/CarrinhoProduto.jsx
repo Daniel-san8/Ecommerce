@@ -12,6 +12,9 @@ import {
   StyledTituloProduto,
   StyledSpanOneTotal,
   StyledSpanTwoTotal,
+  StyledDivCarbonNeutral,
+  StyledAnchorButtonOrder,
+  StyledDivButtonOrder,
 } from "./CompononentsCarrinho";
 
 const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
@@ -59,6 +62,17 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
         <StyledSpanOneTotal>
           Order Total <StyledSpanTwoTotal>${arr.toFixed(2)}</StyledSpanTwoTotal>
         </StyledSpanOneTotal>
+        <StyledDivCarbonNeutral>
+          <img src="./src/assets/images/icon-carbon-neutral.svg" />
+          <span>
+            This is a <strong>carbon-neutral</strong> delivery
+          </span>
+        </StyledDivCarbonNeutral>
+        <StyledDivButtonOrder>
+          <StyledAnchorButtonOrder href="#">
+            Confirm Order
+          </StyledAnchorButtonOrder>
+        </StyledDivButtonOrder>
       </StyledCarrinhoContainer>
     </>
   );
