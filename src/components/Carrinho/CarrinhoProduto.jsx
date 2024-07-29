@@ -19,7 +19,7 @@ import {
 import { GlobalContext } from "../../GlobalContext";
 
 const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
-  const { setModalState } = React.useContext(GlobalContext);
+  const { abreModal, modalState } = React.useContext(GlobalContext);
   const botao = React.useRef(null);
   let multiplicacaoValor = 0;
   let arr = 0;
@@ -36,7 +36,7 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
     const handleClick = (event) => {
       event.preventDefault();
     };
-
+    console.log(modalState);
     const botaoElement = botao.current;
     if (botaoElement) {
       botaoElement.addEventListener("click", handleClick);
@@ -92,9 +92,8 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
           <StyledAnchorButtonOrder
             ref={botao}
             onClick={() => {
-              setModalState(true);
+              abreModal();
             }}
-            href=""
           >
             Confirm Order
           </StyledAnchorButtonOrder>

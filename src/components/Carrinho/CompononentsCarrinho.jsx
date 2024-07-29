@@ -109,6 +109,7 @@ export const StyledAnchorButtonOrder = styled.a`
   color: white;
   padding: 1rem 4rem;
   border-radius: 25px;
+  cursor: pointer;
   transition: 0.3s;
   &:hover {
     background-color: hsl(7, 86%, 42%);

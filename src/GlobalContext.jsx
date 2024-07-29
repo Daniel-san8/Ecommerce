@@ -136,6 +136,10 @@ export const GlobalStorage = ({ children }) => {
 
   const [modalState, setModalState] = React.useState(false);
 
+  function abreModal() {
+    setModalState(!modalState);
+  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -158,7 +162,7 @@ export const GlobalStorage = ({ children }) => {
         tirarItem,
         tirarTodosItens,
         modalState,
-        setModalState,
+        abreModal,
       }}
     >
       {children}
