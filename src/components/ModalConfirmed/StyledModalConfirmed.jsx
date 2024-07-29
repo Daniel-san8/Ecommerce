@@ -6,11 +6,8 @@ export const StyledDivModal = styled.div`
 `;
 
 export const StyledModalCart = styled.div`
-  background-color: white;
+  background-color: green;
   border-radius: 1rem;
-
-  display: flex;
-  flex-direction: column;
 
   padding: 2rem 1rem;
 `;

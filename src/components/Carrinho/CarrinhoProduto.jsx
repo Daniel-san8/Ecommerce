@@ -16,8 +16,11 @@ import {
   StyledAnchorButtonOrder,
   StyledDivButtonOrder,
 } from "./CompononentsCarrinho";
+import { GlobalContext } from "../../GlobalContext";
 
 const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
+  const { setModalState } = React.useContext(GlobalContext);
+  const botao = React.useRef(null);
   let multiplicacaoValor = 0;
   let arr = 0;
   if (itensNoCarrinho.length > 0) {
@@ -28,6 +31,23 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
       return acc;
     }, 0);
   }
+
+  React.useEffect(() => {
+    const handleClick = (event) => {
+      event.preventDefault();
+    };
+
+    const botaoElement = botao.current;
+    if (botaoElement) {
+      botaoElement.addEventListener("click", handleClick);
+    }
+
+    return () => {
+      if (botaoElement) {
+        botaoElement.removeEventListener("click", handleClick);
+      }
+    };
+  }, []);
   return (
     <>
       <StyledCarrinhoContainer>
@@ -69,7 +89,13 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
           </span>
         </StyledDivCarbonNeutral>
         <StyledDivButtonOrder>
-          <StyledAnchorButtonOrder href="#">
+          <StyledAnchorButtonOrder
+            ref={botao}
+            onClick={() => {
+              setModalState(true);
+            }}
+            href=""
+          >
             Confirm Order
           </StyledAnchorButtonOrder>
         </StyledDivButtonOrder>
