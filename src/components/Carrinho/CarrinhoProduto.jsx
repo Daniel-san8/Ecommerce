@@ -19,7 +19,7 @@ import {
 import { GlobalContext } from "../../GlobalContext";
 
 const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
-  const { abreModal, modalState } = React.useContext(GlobalContext);
+  const { abreModal } = React.useContext(GlobalContext);
   const botao = React.useRef(null);
   let multiplicacaoValor = 0;
   let arr = 0;
@@ -36,7 +36,6 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
     const handleClick = (event) => {
       event.preventDefault();
     };
-    console.log(modalState);
     const botaoElement = botao.current;
     if (botaoElement) {
       botaoElement.addEventListener("click", handleClick);

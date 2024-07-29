@@ -10,9 +10,12 @@ const ProdutosModal = () => {
           return (
             <div key={id}>
               <img src={dados[id].image.thumbnail} />
-              <span>{name}</span>
-              <span>{price}</span>
-              <span>{quantidade}</span>
+              <span>{name} </span>
+
+              <span> {price}</span>
+              <br />
+
+              <span>{quantidade}x</span>
               <hr />
             </div>
           );
