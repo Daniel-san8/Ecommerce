@@ -32,9 +32,9 @@ export const GlobalStorage = ({ children }) => {
     }
     window.addEventListener("resize", modificaLargura);
     return () => {
-      removeEventListener("resize", modificaLargura);
+      window.removeEventListener("resize", modificaLargura);
     };
-  }, [window.innerWidth]);
+  }, []);
 
   //Total de itens no Carrinho
 

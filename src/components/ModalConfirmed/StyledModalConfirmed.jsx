@@ -1,5 +1,12 @@
+import React from "react";
 import styled from "styled-components";
 
+// Componente StyledDialog usando forwardRef para passar a ref para o dialog
+export const StyledDialog = React.forwardRef((props, ref) => (
+  <dialog ref={ref} {...props} />
+));
+
+// Componentes estilizados
 export const StyledDivModal = styled.div`
   width: 100%;
   height: 100%;
@@ -7,9 +14,7 @@ export const StyledDivModal = styled.div`
 
 export const StyledModalCart = styled.div`
   background-color: white;
-
   border-radius: 1rem;
-
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -20,11 +25,8 @@ export const StyledParagraphModal = styled.p`
   color: hsl(14, 25%, 72%);
 `;
 
-export const StyledOrderModal = styled.span`
-  color: hsl(12, 20%, 44%);
-`;
-
-export const StyledDialog = styled.dialog`
+// Componente estilizado baseado em StyledDialog
+export const StyledDialogStyled = styled(StyledDialog)`
   border: none;
   max-width: 100%;
   max-height: 80%;
