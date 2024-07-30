@@ -17,6 +17,8 @@ const ModalConfirmed = () => {
     if (classeModal.current) {
       classeModal.current.showModal();
       setModalState(false);
+      document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = "17px";
     }
   }
 
@@ -28,6 +30,8 @@ const ModalConfirmed = () => {
     function handleClick({ target }) {
       if (target === classeModal.current && classeModal.current) {
         classeModal.current.close();
+        document.body.style.overflow = "auto";
+        document.body.style.paddingRight = "0";
       }
     }
 
