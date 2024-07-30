@@ -6,10 +6,14 @@ export const StyledDivModal = styled.div`
 `;
 
 export const StyledModalCart = styled.div`
-  background-color: hsl(20, 50%, 98%);
+  background-color: white;
+
   border-radius: 1rem;
 
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `;
 
 export const StyledParagraphModal = styled.p`
@@ -18,4 +22,21 @@ export const StyledParagraphModal = styled.p`
 
 export const StyledOrderModal = styled.span`
   color: hsl(12, 20%, 44%);
+`;
+
+export const StyledDialog = styled.dialog`
+  border: none;
+  max-width: 100%;
+  max-height: 80%;
+  outline: none;
+  margin-top: auto;
+
+  &::backdrop {
+    background-color: rgba(0 0 0 /0.5);
+    transition: 1s;
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 `;

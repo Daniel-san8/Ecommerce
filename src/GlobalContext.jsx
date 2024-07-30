@@ -169,6 +169,7 @@ export const GlobalStorage = ({ children }) => {
         abreModal,
         setValorTotal,
         valorTotal,
+        setModalState,
       }}
     >
       {children}

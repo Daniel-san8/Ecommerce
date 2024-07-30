@@ -9,14 +9,14 @@ import {
   StyledSpanUm,
 } from "../Carrinho/CompononentsCarrinho";
 
-const ProdutosModal = () => {
+const ProdutosModal = ({ abreModal }) => {
   const { itensNoCarrinho, dados, valorTotal } =
     React.useContext(GlobalContext);
   const botao = React.useRef(null);
-
   React.useEffect(() => {
     const handleClick = (event) => {
       event.preventDefault();
+      abreModal();
     };
     const botaoElement = botao.current;
     if (botaoElement) {
