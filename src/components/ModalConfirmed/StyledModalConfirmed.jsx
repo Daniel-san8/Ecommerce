@@ -13,7 +13,6 @@ export const StyledDivModal = styled.div`
 export const StyledModalCart = styled.div`
   background-color: white;
   border-radius: 1rem;
-  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -21,6 +20,8 @@ export const StyledModalCart = styled.div`
 
 export const StyledParagraphModal = styled.p`
   color: hsl(14, 25%, 72%);
+  padding: 0;
+  margin: 0;
 `;
 
 export const StyledOrderModal = styled.span`
@@ -32,8 +33,9 @@ export const StyledDialogStyled = styled(StyledDialog)`
   max-width: 100%;
   max-height: 80%;
   outline: none;
-  margin-top: auto;
-
+  border-radius: 1rem 1rem 0 0;
+  padding: 2.5rem;
+  margin-bottom: 0;
   &::backdrop {
     background-color: rgba(0 0 0 /0.5);
     transition: 1s;

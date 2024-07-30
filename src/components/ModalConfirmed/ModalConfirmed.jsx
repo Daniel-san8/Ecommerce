@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styles/reset.css";
 import {
   StyledDialogStyled,
   StyledDivModal,
@@ -46,21 +47,23 @@ const ModalConfirmed = () => {
 
   return (
     <StyledDialogStyled ref={classeModal}>
-      <StyledDivModal ref={divModal}>
+      <StyledDivModal ref={divModal} className="reset">
         <StyledModalCart>
           <img
             style={{
               width: "35px",
               height: "35px",
               paddingBottom: ".6rem",
+              padding: "0",
+              margin: "0",
             }}
             src="./src/assets/images/icon-order-confirmed.svg"
             alt="Order Confirmed"
           />
-          <h1>
+          <h1 style={{ padding: "0", margin: "0" }}>
             Order <br /> Confirmed
           </h1>
-          <StyledParagraphModal>
+          <StyledParagraphModal className="reset">
             We hope you enjoy your food!
           </StyledParagraphModal>
           <ProdutosModal />
