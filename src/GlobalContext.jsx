@@ -140,6 +140,8 @@ export const GlobalStorage = ({ children }) => {
     setModalState(!modalState);
   }
 
+  //itens
+
   return (
     <GlobalContext.Provider
       value={{
