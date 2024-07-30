@@ -33,9 +33,12 @@ export const StyledDialogStyled = styled(StyledDialog)`
   max-width: 100%;
   max-height: 80%;
   outline: none;
+  height: ${({ larguraUsuario }) => (larguraUsuario < 768 ? "80%" : "30%")};
   border-radius: 1rem 1rem 0 0;
-  padding: 2.5rem;
-  margin-bottom: 0;
+  padding: ${({ larguraUsuario }) =>
+    larguraUsuario < 425 ? "2.5rem" : "4rem"};
+  margin-bottom: ${({ larguraUsuario }) =>
+    larguraUsuario < 768 ? "0" : "auto"};
   &::backdrop {
     background-color: rgba(0 0 0 /0.5);
     transition: 1s;

@@ -12,7 +12,8 @@ import ProdutosModal from "./ProdutosModal";
 const ModalConfirmed = () => {
   const classeModal = React.useRef(null);
   const divModal = React.useRef(null);
-  const { modalState, setModalState } = React.useContext(GlobalContext);
+  const { modalState, setModalState, larguraUsuario } =
+    React.useContext(GlobalContext);
 
   function abreModal() {
     if (classeModal.current) {
@@ -46,7 +47,7 @@ const ModalConfirmed = () => {
   }, []);
 
   return (
-    <StyledDialogStyled ref={classeModal}>
+    <StyledDialogStyled $larguraUsuario={larguraUsuario} ref={classeModal}>
       <StyledDivModal ref={divModal} className="reset">
         <StyledModalCart>
           <img
