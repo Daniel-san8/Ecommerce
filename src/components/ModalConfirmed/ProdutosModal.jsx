@@ -1,11 +1,39 @@
 import React from "react";
 import { GlobalContext } from "../../GlobalContext";
+import {
+  StyledAnchorButtonOrder,
+  StyledDivButtonOrder,
+  StyledQuantidadeItens,
+  StyledSpanOneTotal,
+  StyledSpanTwoTotal,
+  StyledSpanUm,
+} from "../Carrinho/CompononentsCarrinho";
 
 const ProdutosModal = () => {
-  const { itensNoCarrinho, dados } = React.useContext(GlobalContext);
+  const { itensNoCarrinho, dados, valorTotal } =
+    React.useContext(GlobalContext);
+  const botao = React.useRef(null);
+
+  React.useEffect(() => {
+    const handleClick = (event) => {
+      event.preventDefault();
+    };
+    const botaoElement = botao.current;
+    if (botaoElement) {
+      botaoElement.addEventListener("click", handleClick);
+    }
+
+    return () => {
+      if (botaoElement) {
+        botaoElement.removeEventListener("click", handleClick);
+      }
+    };
+  }, []);
   return (
     <>
-      <div style={{ backgroundColor: "hsl(12, 20%, 44%)" }}>
+      <div
+        style={{ backgroundColor: "hsl(13, 31%, 94%)", borderRadius: "5px" }}
+      >
         {itensNoCarrinho.map(({ name, price, quantidade, id }) => {
           if (quantidade <= 0) return null;
           return (
@@ -17,7 +45,6 @@ const ProdutosModal = () => {
                   gap: "1rem",
                   fontWeight: "600",
                   fontSize: "13px",
-                  transition: "13s",
                 }}
               >
                 <img
@@ -34,8 +61,8 @@ const ProdutosModal = () => {
                   <span>{name} </span>
 
                   <span style={{ display: "flex", gap: "1rem" }}>
-                    <span>{quantidade}x</span>
-                    <span>@ {price.toFixed(2)}</span>
+                    <StyledQuantidadeItens>{quantidade}x</StyledQuantidadeItens>
+                    <StyledSpanUm>@ {price.toFixed(2)}</StyledSpanUm>
                   </span>
                 </div>
                 <span
@@ -44,13 +71,32 @@ const ProdutosModal = () => {
                     margin: "auto 0 auto auto",
                   }}
                 >
-                  58.00
+                  ${(price * quantidade).toFixed(2)}
                 </span>
               </div>
+              <span
+                style={{
+                  display: "block",
+                  margin: "0 auto",
+                  justifyItems: "center",
+                  width: "80%",
+                  backgroundColor: "hsl(25, 58%, 88%)",
+                  height: "1px",
+                }}
+              ></span>
             </div>
           );
         })}
+        <StyledSpanOneTotal>
+          Order Total
+          <StyledSpanTwoTotal>${valorTotal.toFixed(2)}</StyledSpanTwoTotal>
+        </StyledSpanOneTotal>
       </div>
+      <StyledDivButtonOrder>
+        <StyledAnchorButtonOrder ref={botao}>
+          Start New Order
+        </StyledAnchorButtonOrder>
+      </StyledDivButtonOrder>
     </>
   );
 };

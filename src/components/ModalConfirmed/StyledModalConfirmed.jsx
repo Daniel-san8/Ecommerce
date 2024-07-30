@@ -6,7 +6,7 @@ export const StyledDivModal = styled.div`
 `;
 
 export const StyledModalCart = styled.div`
-  background-color: green;
+  background-color: hsl(20, 50%, 98%);
   border-radius: 1rem;
 
   padding: 2rem 1rem;

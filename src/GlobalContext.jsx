@@ -140,7 +140,9 @@ export const GlobalStorage = ({ children }) => {
     setModalState(!modalState);
   }
 
-  //itens
+  //Order total Global
+
+  const [valorTotal, setValorTotal] = React.useState(0);
 
   return (
     <GlobalContext.Provider
@@ -165,6 +167,8 @@ export const GlobalStorage = ({ children }) => {
         tirarTodosItens,
         modalState,
         abreModal,
+        setValorTotal,
+        valorTotal,
       }}
     >
       {children}

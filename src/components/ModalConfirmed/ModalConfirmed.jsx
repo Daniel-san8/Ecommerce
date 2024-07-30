@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import {
   StyledDivModal,
   StyledModalCart,
@@ -27,7 +26,6 @@ const ModalConfirmed = () => {
               We hope you enjoy your food!
             </StyledParagraphModal>
             <ProdutosModal />
-            <p>Order Confirmed $46.50</p>
           </StyledModalCart>
         </StyledDivModal>
       ) : null}

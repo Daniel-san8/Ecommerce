@@ -19,18 +19,25 @@ import {
 import { GlobalContext } from "../../GlobalContext";
 
 const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
-  const { abreModal } = React.useContext(GlobalContext);
+  const { abreModal, setValorTotal, valorTotal } =
+    React.useContext(GlobalContext);
   const botao = React.useRef(null);
   let multiplicacaoValor = 0;
   let arr = 0;
-  if (itensNoCarrinho.length > 0) {
-    arr = itensNoCarrinho.reduce((acc, item) => {
-      if (item.price && item.quantidade) {
-        return acc + item.price * item.quantidade;
-      }
-      return acc;
-    }, 0);
+  function mudaTotal() {
+    if (itensNoCarrinho.length > 0) {
+      arr = itensNoCarrinho.reduce((acc, item) => {
+        if (item.price && item.quantidade) {
+          setValorTotal(acc + item.price * item.quantidade);
+          return acc + item.price * item.quantidade;
+        }
+        return acc;
+      }, 0);
+    }
   }
+  React.useEffect(() => {
+    mudaTotal();
+  }, [itensNoCarrinho]);
 
   React.useEffect(() => {
     const handleClick = (event) => {
@@ -79,7 +86,8 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
           ) : null;
         })}
         <StyledSpanOneTotal>
-          Order Total <StyledSpanTwoTotal>${arr.toFixed(2)}</StyledSpanTwoTotal>
+          Order Total{" "}
+          <StyledSpanTwoTotal>${valorTotal.toFixed(2)}</StyledSpanTwoTotal>
         </StyledSpanOneTotal>
         <StyledDivCarbonNeutral>
           <img src="./src/assets/images/icon-carbon-neutral.svg" />
