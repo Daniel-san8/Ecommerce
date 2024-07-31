@@ -35,22 +35,46 @@ export const StyledImg = styled.img`
 
 export const StyledDadosImagem = styled.div`
   margin: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "0 2.5rem" : "0 1.5rem";
+    if (props.$larguraUsuario >= 1024) {
+      return "0 1rem";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "0 2.5rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "0 1.5rem";
+    }
   }};
+
   font-size: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "2rem" : "1rem";
+    if (props.$larguraUsuario >= 1024) {
+      return "1rem";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "2rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "1rem";
+    }
   }};
 `;
 
 export const StyledCategory = styled.p`
   color: gray;
+  margin: 3px;
 `;
 
 export const StyledName = styled.p`
   font-weight: 600;
+  margin: 3px;
 `;
 
 export const StyledPreco = styled.p`
   color: hsl(14, 86%, 42%);
   font-weight: bolder;
+  margin: 3px;
 `;

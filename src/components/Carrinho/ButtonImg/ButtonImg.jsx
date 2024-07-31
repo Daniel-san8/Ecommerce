@@ -38,13 +38,13 @@ export const StyledContainerButtonCart = styled.div`
     if (props.$larguraUsuario >= 1024) {
       return "46%";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
-      return "24%";
+      return "15%";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
       props.$larguraUsuario <= 425
     ) {
-      return "130px";
+      return "90px";
     }
   }};
   right: ${(props) => {
@@ -123,13 +123,13 @@ export const StyledButtonOnProduct = styled.div`
     if (props.$larguraUsuario >= 1024) {
       return "46%";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
-      return "24%";
+      return "15%";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
       props.$larguraUsuario <= 425
     ) {
-      return "130px";
+      return "90px";
     }
   }};
   right: ${(props) => {
