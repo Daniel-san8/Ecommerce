@@ -34,7 +34,7 @@ export const GlobalStorage = ({ children }) => {
     return () => {
       window.removeEventListener("resize", modificaLargura);
     };
-  }, []);
+  }, [larguraUsuario]);
 
   //Total de itens no Carrinho
 

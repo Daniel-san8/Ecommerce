@@ -33,19 +33,22 @@ export const StyledDialogStyled = styled(StyledDialog)`
   max-width: 100%;
   max-height: 80%;
   outline: none;
-  /* height: ${({ larguraUsuario }) =>
-    larguraUsuario < 768 ? "80%" : "30%"}; */
+  height: ${(props) => (props.$larguraUsuario >= 768 ? "30%" : "40%")};
 
-  border-radius: 1rem 1rem 0 0;
-  /* padding: ${({ larguraUsuario }) =>
-    larguraUsuario < 425 ? "2.5rem" : "4rem"}; */
-  padding: 2.55rem;
-  margin-left: 0;
-  margin-right: 0;
-  /* margin-bottom: ${({ larguraUsuario }) =>
-    larguraUsuario < 768 ? "0" : "auto"}; */
+  border-radius: ${(props) =>
+    props.$larguraUsuario >= 768 ? "1rem" : "1rem 1rem 0 0"};
+  padding: ${(props) =>
+    props.$larguraUsuario <= 320
+      ? "2rem"
+      : props.$larguraUsuario >= 425
+      ? "5rem"
+      : props.$larguraUsuario >= 375
+      ? "3.5rem"
+      : "0"};
+  /* padding: 2.55rem; */
 
-  margin-bottom: 0;
+  margin-bottom: ${(props) => (props.$larguraUsuario >= 768 ? "auto" : "0")};
+
   &::backdrop {
     background-color: rgba(0 0 0 /0.5);
     transition: 1s;

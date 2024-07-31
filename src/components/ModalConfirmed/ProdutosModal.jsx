@@ -10,7 +10,7 @@ import {
 } from "../Carrinho/CompononentsCarrinho";
 
 const ProdutosModal = () => {
-  const { itensNoCarrinho, dados, valorTotal } =
+  const { itensNoCarrinho, dados, valorTotal, larguraUsuario } =
     React.useContext(GlobalContext);
   const botao = React.useRef(null);
   React.useEffect(() => {
@@ -92,7 +92,11 @@ const ProdutosModal = () => {
         </StyledSpanOneTotal>
       </div>
       <StyledDivButtonOrder>
-        <StyledAnchorButtonOrder onClick={() => location.reload()} ref={botao}>
+        <StyledAnchorButtonOrder
+          $larguraUsuario={larguraUsuario}
+          onClick={() => location.reload()}
+          ref={botao}
+        >
           Start New Order
         </StyledAnchorButtonOrder>
       </StyledDivButtonOrder>

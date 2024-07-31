@@ -14,7 +14,6 @@ const ModalConfirmed = () => {
   const divModal = React.useRef(null);
   const { modalState, setModalState, larguraUsuario } =
     React.useContext(GlobalContext);
-
   function abreModal() {
     if (classeModal.current) {
       classeModal.current.showModal();

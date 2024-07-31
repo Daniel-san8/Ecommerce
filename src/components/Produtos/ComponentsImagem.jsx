@@ -18,13 +18,12 @@ export const StyledImg = styled.img`
 `;
 
 export const StyledDadosImagem = styled.div`
-  /* margin: ${({ larguraUsuario }) => {
-    return larguraUsuario < 768 ? "0 1.5rem" : "0 2.5rem";
-  }}; */
-  margin: 0 1.5rem;
-  /* font-size: ${({ larguraUsuario }) => {
-    return larguraUsuario < 768 ? "16px" : "2rem";
-  }}; */
+  margin: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "0 2.5rem" : "0 1.5rem";
+  }};
+  font-size: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "2rem" : "1rem";
+  }};
 `;
 
 export const StyledCategory = styled.p`

@@ -107,7 +107,8 @@ export const StyledAnchorButtonOrder = styled.a`
   background-color: hsl(14, 86%, 42%);
   text-decoration: none;
   color: white;
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
+  white-space: nowrap;
   border-radius: 25px;
   cursor: pointer;
   transition: 0.3s;

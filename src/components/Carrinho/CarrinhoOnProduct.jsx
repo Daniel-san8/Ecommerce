@@ -18,7 +18,7 @@ const CarrinhoOnProduct = ({
       $larguraUsuario={larguraUsuario}
       $itens={quantidadeItens}
     >
-      <StyledButtonOnProductIncDec>
+      <StyledButtonOnProductIncDec $larguraUsuario={larguraUsuario}>
         <StyledspanIncMais
           $larguraUsuario={larguraUsuario}
           onClick={aumentaQuantidade}
@@ -26,7 +26,10 @@ const CarrinhoOnProduct = ({
           <img src="./src/assets/images/icon-increment-quantity.svg" />
         </StyledspanIncMais>
         <span>{quantidadeItens}</span>
-        <StyledspanIncDec onClick={diminuiQuantidade}>
+        <StyledspanIncDec
+          $larguraUsuario={larguraUsuario}
+          onClick={diminuiQuantidade}
+        >
           <img src="./src/assets/images/icon-decrement-quantity.svg" />
         </StyledspanIncDec>
       </StyledButtonOnProductIncDec>
