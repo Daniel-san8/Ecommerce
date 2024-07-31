@@ -52,7 +52,10 @@ const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
           $quantidade={quantidadeCarrinho}
           onClick={setarWrapper}
         >
-          <StyledCarrinhoProntoImg src="./src/assets/images/icon-add-to-cart.svg" />
+          <StyledCarrinhoProntoImg
+            $larguraUsuario={larguraUsuario}
+            src="./src/assets/images/icon-add-to-cart.svg"
+          />
           <StyledTextoButtonCart>Add to Cart</StyledTextoButtonCart>
         </StyledContainerButtonCart>
       ) : (
