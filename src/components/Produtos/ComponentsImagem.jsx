@@ -1,17 +1,33 @@
 import styled from "styled-components";
 
-export const StyledDivImg = styled.div`
+export const StyledDivPrincipal = styled.div`
   display: flex;
-  flex-direction: column;
+  width: ${(props) => {
+    return props.$larguraUsuario < 1024 ? "initial" : "100%";
+  }};
+  flex-direction: ${(props) => {
+    return props.$larguraUsuario < 1024 ? "column" : "row";
+  }};
+  flex-wrap: ${(props) => {
+    return props.$larguraUsuario < 1024 ? "nowrap" : "wrap";
+  }};
+`;
+
+export const StyledDivImg = styled.div`
+  flex: 1 1 calc(33.333% - 10px);
   position: relative;
 `;
 
 export const StyledImg = styled.img`
   border-radius: 0.6rem;
   max-width: 90%;
-  width: 100%;
-  margin: 2rem auto;
-  display: block;
+  width: ${(props) => {
+    return props.$larguraUsuario < 1024 ? "90%" : "100%";
+  }};
+  margin: ${(props) => {
+    return props.$larguraUsuario < 1024 ? "2rem auto" : "1.5rem auto";
+  }};
+  display: flex;
   border: ${({ on }) =>
     on > 0 ? "2px solid hsl(14, 86%, 42%)" : "2px solid transparent"};
   transition: 0.3s;

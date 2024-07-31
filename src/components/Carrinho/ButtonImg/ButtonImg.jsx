@@ -2,21 +2,64 @@ import styled from "styled-components";
 
 export const StyledContainerButtonCart = styled.div`
   background-color: white;
+
   width: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "80%" : "50%";
-  }};
-  height: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "8%" : "10%";
-  }};
-  max-width: 300px;
-  position: absolute;
-  bottom: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "24%" : "130px";
-  }};
-  right: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "30%" : "25%";
+    if (props.$larguraUsuario >= 1024) {
+      return "50%";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "80%";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "50%";
+    }
   }};
 
+  height: ${(props) => {
+    if (props.$larguraUsuario >= 1024) {
+      return "7%";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "8%";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "10%";
+    }
+  }};
+
+  max-width: 300px;
+  position: absolute;
+
+  bottom: ${(props) => {
+    if (props.$larguraUsuario >= 1024) {
+      return "46%";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "24%";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "130px";
+    }
+  }};
+  right: ${(props) => {
+    if (props.$larguraUsuario >= 1024) {
+      return "25%";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "30%";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "25%";
+    }
+  }};
   display: ${(props) => (props.$quantidade <= 0 ? "flex" : "none")};
   justify-content: center;
   align-items: center;
@@ -26,13 +69,41 @@ export const StyledContainerButtonCart = styled.div`
   }};
   border: 1px solid hsl(7, 20%, 60%);
   cursor: pointer;
+
   font-size: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "1.5rem" : "1rem";
+    if (props.$larguraUsuario >= 1024) {
+      return "1rem";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "1.5rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "1rem";
+    }
   }};
+
   transition: 0.2s;
   &:hover {
     filter: grayscale(0.5);
   }
+`;
+
+export const StyledCarrinhoProntoImg = styled.img`
+  height: ${(props) => {
+    if (props.$larguraUsuario >= 1024) {
+      return "initial";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "35px";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "initial";
+    }
+  }};
 `;
 
 export const StyledTextoButtonCart = styled.span`
@@ -49,10 +120,30 @@ export const StyledButtonOnProduct = styled.div`
   max-width: 300px;
   position: absolute;
   bottom: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "24%" : "130px";
+    if (props.$larguraUsuario >= 1024) {
+      return "46%";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "24%";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "130px";
+    }
   }};
   right: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "30%" : "25%";
+    if (props.$larguraUsuario >= 1024) {
+      return "25%";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "30%";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "25%";
+    }
   }};
   display: ${(props) => (props.$itens > 0 ? "flex" : "none")};
   align-items: center;

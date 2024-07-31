@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  StyledCarrinhoProntoImg,
   StyledContainerButtonCart,
   StyledTextoButtonCart,
 } from "./ButtonImg/ButtonImg";
@@ -51,10 +52,7 @@ const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
           $quantidade={quantidadeCarrinho}
           onClick={setarWrapper}
         >
-          <img
-            style={{ height: larguraUsuario >= 768 ? "35px" : "initial" }}
-            src="./src/assets/images/icon-add-to-cart.svg"
-          />
+          <StyledCarrinhoProntoImg src="./src/assets/images/icon-add-to-cart.svg" />
           <StyledTextoButtonCart>Add to Cart</StyledTextoButtonCart>
         </StyledContainerButtonCart>
       ) : (

@@ -4,6 +4,7 @@ import {
   StyledCategory,
   StyledDadosImagem,
   StyledDivImg,
+  StyledDivPrincipal,
   StyledImg,
   StyledName,
   StyledPreco,
@@ -26,7 +27,7 @@ const Produtos = () => {
 
   if (dados === null) return null;
   return (
-    <>
+    <StyledDivPrincipal $larguraUsuario={larguraUsuario}>
       {dados.map(({ image, category, name, price, id }) => {
         const itemNoCarrinho = itensNoCarrinho.find((item) => item.id === id);
         let quantity = 0;
@@ -34,8 +35,9 @@ const Produtos = () => {
           quantity = itemNoCarrinho.quantidade;
         }
         return (
-          <StyledDivImg key={category}>
+          <StyledDivImg $larguraUsuario={larguraUsuario} key={category}>
             <StyledImg
+              $larguraUsuario={larguraUsuario}
               on={quantity}
               src={
                 larguraUsuario <= 420
@@ -70,7 +72,7 @@ const Produtos = () => {
           tirarTodosItens={tirarTodosItens}
         />
       )}
-    </>
+    </StyledDivPrincipal>
   );
 };
 
