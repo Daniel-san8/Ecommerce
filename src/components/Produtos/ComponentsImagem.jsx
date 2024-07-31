@@ -9,6 +9,7 @@ export const StyledDivImg = styled.div`
 export const StyledImg = styled.img`
   border-radius: 0.6rem;
   max-width: 90%;
+  width: 100%;
   margin: 2rem auto;
   display: block;
   border: ${({ on }) =>
@@ -17,7 +18,13 @@ export const StyledImg = styled.img`
 `;
 
 export const StyledDadosImagem = styled.div`
+  /* margin: ${({ larguraUsuario }) => {
+    return larguraUsuario < 768 ? "0 1.5rem" : "0 2.5rem";
+  }}; */
   margin: 0 1.5rem;
+  /* font-size: ${({ larguraUsuario }) => {
+    return larguraUsuario < 768 ? "16px" : "2rem";
+  }}; */
 `;
 
 export const StyledCategory = styled.p`

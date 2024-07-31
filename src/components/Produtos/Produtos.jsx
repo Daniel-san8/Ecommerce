@@ -44,13 +44,13 @@ const Produtos = () => {
                   ? image.tablet
                   : larguraUsuario > 769
                   ? image.desktop
-                  : image.thumbnail
+                  : image.desktop
               }
             ></StyledImg>
             {<CarrinhoPronto quantidadeCarrinho={quantity} id={id} />}
 
             {dados && (
-              <StyledDadosImagem>
+              <StyledDadosImagem $larguraUsuario={larguraUsuario}>
                 {category && <StyledCategory>{category}</StyledCategory>}
                 {category && <StyledName>{name}</StyledName>}
                 {category && <StyledPreco>${price.toFixed(2)}</StyledPreco>}

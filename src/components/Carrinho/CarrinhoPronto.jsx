@@ -14,6 +14,7 @@ const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
     setQuantidadeDoProduto,
     itensNoCarrinho,
     tirarItem,
+    larguraUsuario,
   } = React.useContext(GlobalContext);
 
   const itemNoCarrinho = itensNoCarrinho.find((item) => item.id === id);
@@ -46,6 +47,7 @@ const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
     <>
       {quantidadeCarrinho === 0 ? (
         <StyledContainerButtonCart
+          $larguraUsuario={larguraUsuario}
           $quantidade={quantidadeCarrinho}
           onClick={setarWrapper}
         >
