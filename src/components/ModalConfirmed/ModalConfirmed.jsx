@@ -37,12 +37,21 @@ const ModalConfirmed = () => {
       }
     }
 
+    function handleClickEsc({ target }) {
+      if (target === classeModal.current && classeModal.current) {
+        document.body.style.overflow = "auto";
+        document.body.style.paddingRight = "0";
+      }
+    }
+
     if (classeModal) {
       classeModal.current.addEventListener("click", handleClick);
+      classeModal.current.addEventListener("keydown", handleClickEsc);
     }
 
     return () => {
       classeModal.current.removeEventListener("click", handleClick);
+      classeModal.current.removeEventListener("keydown", handleClickEsc);
     };
   }, []);
 

@@ -39,7 +39,9 @@ export const StyledDialogStyled = styled(StyledDialog)`
   border-radius: 1rem 1rem 0 0;
   /* padding: ${({ larguraUsuario }) =>
     larguraUsuario < 425 ? "2.5rem" : "4rem"}; */
-  padding: 2.5rem;
+  padding: 2.55rem;
+  margin-left: 0;
+  margin-right: 0;
   /* margin-bottom: ${({ larguraUsuario }) =>
     larguraUsuario < 768 ? "0" : "auto"}; */
 

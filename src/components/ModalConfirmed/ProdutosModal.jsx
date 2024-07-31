@@ -92,7 +92,7 @@ const ProdutosModal = () => {
         </StyledSpanOneTotal>
       </div>
       <StyledDivButtonOrder>
-        <StyledAnchorButtonOrder ref={botao}>
+        <StyledAnchorButtonOrder onClick={() => location.reload()} ref={botao}>
           Start New Order
         </StyledAnchorButtonOrder>
       </StyledDivButtonOrder>
