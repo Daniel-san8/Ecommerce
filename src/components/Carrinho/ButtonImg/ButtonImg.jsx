@@ -74,7 +74,9 @@ export const StyledButtonOnProduct = styled.div`
 export const StyledButtonOnProductIncDec = styled.span`
   display: flex;
   transition: 0.2s;
-  gap: 4rem;
+  gap: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "4rem" : "3rem";
+  }};
 `;
 
 export const StyledspanIncDec = styled.span`

@@ -19,7 +19,7 @@ import {
 import { GlobalContext } from "../../GlobalContext";
 
 const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
-  const { abreModal, setValorTotal, valorTotal } =
+  const { abreModal, setValorTotal, valorTotal, larguraUsuario } =
     React.useContext(GlobalContext);
   const botao = React.useRef(null);
   let multiplicacaoValor = 0;
@@ -57,13 +57,15 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
   return (
     <>
       <StyledCarrinhoContainer>
-        <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
+        <StyledTituloCarrinho $larguraUsuario={larguraUsuario}>
+          Your Cart ({totalItems})
+        </StyledTituloCarrinho>
         {itensNoCarrinho.map(({ name, price, quantidade, id }) => {
           const validPrice = Number(price) || 0;
           const validQuantidade = Number(quantidade) || 0;
           multiplicacaoValor = validPrice * validQuantidade;
           return quantidade > 0 ? (
-            <StyledDivCarrinhoProduto key={id}>
+            <StyledDivCarrinhoProduto $larguraUsuario={larguraUsuario} key={id}>
               <StyledDivCarrinhoProdutoItens>
                 <StyledTituloProduto>{name}</StyledTituloProduto>
                 <StyledDivQuantidades>
@@ -79,24 +81,28 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
                 </StyledDivQuantidades>
               </StyledDivCarrinhoProdutoItens>
               <StyledImgItens
+                $larguraUsuario={larguraUsuario}
                 onClick={() => tirarTodosItens(id)}
                 src="./src/assets/images/icon-remove-item.svg"
               />
             </StyledDivCarrinhoProduto>
           ) : null;
         })}
-        <StyledSpanOneTotal>
+        <StyledSpanOneTotal $larguraUsuario={larguraUsuario}>
           Order Total{" "}
-          <StyledSpanTwoTotal>${valorTotal.toFixed(2)}</StyledSpanTwoTotal>
+          <StyledSpanTwoTotal $larguraUsuario={larguraUsuario}>
+            ${valorTotal.toFixed(2)}
+          </StyledSpanTwoTotal>
         </StyledSpanOneTotal>
-        <StyledDivCarbonNeutral>
+        <StyledDivCarbonNeutral $larguraUsuario={larguraUsuario}>
           <img src="./src/assets/images/icon-carbon-neutral.svg" />
           <span>
             This is a <strong>carbon-neutral</strong> delivery
           </span>
         </StyledDivCarbonNeutral>
-        <StyledDivButtonOrder>
+        <StyledDivButtonOrder $larguraUsuario={larguraUsuario}>
           <StyledAnchorButtonOrder
+            $larguraUsuario={larguraUsuario}
             ref={botao}
             onClick={() => {
               abreModal();

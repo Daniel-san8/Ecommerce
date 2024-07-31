@@ -2,7 +2,12 @@ import styled from "styled-components";
 
 export const StyledTituloCarrinho = styled.h2`
   color: hsl(14, 86%, 42%);
-  padding: 1.5rem;
+  padding: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "2rem" : "1.5rem";
+  }};
+  font-size: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "2.5rem" : "1rem";
+  }};
 `;
 
 export const StyledCarrinhoContainer = styled.div`
@@ -32,6 +37,12 @@ export const StyledCarrinhoParagrafo = styled.p`
 export const StyledDivCarrinhoProduto = styled.div`
   display: flex;
   align-items: center;
+  font-size: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "2rem" : "initial";
+  }};
+  padding: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "0 1rem" : "initial";
+  }};
 `;
 
 export const StyledDivCarrinhoProdutoItens = styled.div`
@@ -65,8 +76,12 @@ export const StyledSpanDois = styled.span`
 `;
 
 export const StyledImgItens = styled.img`
-  width: 20px;
-  height: 20px;
+  width: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "40px" : "20px";
+  }};
+  height: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "40px" : "20px";
+  }};
   padding: 0 1.5rem;
   cursor: pointer;
 `;
@@ -77,12 +92,17 @@ export const StyledSpanOneTotal = styled.span`
   justify-content: space-around;
   gap: 1rem;
   padding: 1.5rem 0;
+  font-size: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "2rem" : "initial";
+  }};
   transition: 0.3s;
 `;
 
 export const StyledSpanTwoTotal = styled.span`
-  font-size: 1.5rem;
   font-weight: bold;
+  font-size: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "2rem" : "initial";
+  }};
 `;
 
 export const StyledDivCarbonNeutral = styled.div`
@@ -90,7 +110,9 @@ export const StyledDivCarbonNeutral = styled.div`
   padding: 1rem 0;
   margin: 0 1.5rem;
   white-space: nowrap;
-  font-size: 0.8rem;
+  font-size: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "1.5rem" : "0.8rem";
+  }};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,9 +130,22 @@ export const StyledAnchorButtonOrder = styled.a`
   text-decoration: none;
   color: white;
   padding: 1rem 3rem;
+  padding: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "2rem 4rem" : "1rem 3rem";
+  }};
+  width: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "60%" : "30%";
+  }};
+  display: flex;
+  justify-content: center;
   white-space: nowrap;
-  border-radius: 25px;
+  border-radius: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "50px" : "25px";
+  }};
   cursor: pointer;
+  font-size: ${(props) => {
+    return props.$larguraUsuario >= 768 ? "1.5rem" : "1rem";
+  }};
   transition: 0.3s;
   &:hover {
     background-color: hsl(7, 86%, 42%);
