@@ -56,7 +56,7 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
   }, []);
   return (
     <>
-      <StyledCarrinhoContainer>
+      <StyledCarrinhoContainer $larguraUsuario={larguraUsuario}>
         <StyledTituloCarrinho $larguraUsuario={larguraUsuario}>
           Your Cart ({totalItems})
         </StyledTituloCarrinho>

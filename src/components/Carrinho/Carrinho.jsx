@@ -9,20 +9,21 @@ import {
 import { GlobalContext } from "../../GlobalContext";
 
 const Carrinho = () => {
-  const {
-    totalItems,
-
-    dados,
-  } = React.useContext(GlobalContext);
+  const { totalItems, larguraUsuario, dados } = React.useContext(GlobalContext);
   if (dados === null) return null;
   return (
     <>
       {totalItems === 0 ? (
         <StyledCarrinhoContainer>
-          <StyledTituloCarrinho>Your Cart ({totalItems})</StyledTituloCarrinho>
+          <StyledTituloCarrinho $larguraUsuario={larguraUsuario}>
+            Your Cart ({totalItems})
+          </StyledTituloCarrinho>
           <StyledCarrinhoDiv>
-            <StyledCarrinhoImg src="./src/assets/images/illustration-empty-cart.svg"></StyledCarrinhoImg>
-            <StyledCarrinhoParagrafo>
+            <StyledCarrinhoImg
+              $larguraUsuario={larguraUsuario}
+              src="./src/assets/images/illustration-empty-cart.svg"
+            ></StyledCarrinhoImg>
+            <StyledCarrinhoParagrafo $larguraUsuario={larguraUsuario}>
               Your added items will appear here
             </StyledCarrinhoParagrafo>
           </StyledCarrinhoDiv>
