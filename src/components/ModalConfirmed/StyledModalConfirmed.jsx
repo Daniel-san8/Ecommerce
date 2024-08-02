@@ -38,8 +38,8 @@ export const StyledDialogStyled = styled(StyledDialog)`
   border-radius: ${(props) =>
     props.$larguraUsuario >= 768 ? "1rem" : "1rem 1rem 0 0"};
   padding: ${(props) =>
-    props.$larguraUsuario <= 320
-      ? "2rem"
+    props.$larguraUsuario <= 325
+      ? "1.5rem"
       : props.$larguraUsuario >= 425
       ? "5rem"
       : props.$larguraUsuario >= 375
