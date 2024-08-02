@@ -96,7 +96,7 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
           </StyledSpanTwoTotal>
         </StyledSpanOneTotal>
         <StyledDivCarbonNeutral $larguraUsuario={larguraUsuario}>
-          <img src="../../public/images/icon-carbon-neutral.svg" />
+          <img src="/images/icon-carbon-neutral.svg" />
           <span>
             This is a <strong>carbon-neutral</strong> delivery
           </span>
