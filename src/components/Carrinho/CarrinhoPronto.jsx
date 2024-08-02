@@ -54,7 +54,7 @@ const CarrinhoPronto = ({ quantidadeCarrinho, id }) => {
         >
           <StyledCarrinhoProntoImg
             $larguraUsuario={larguraUsuario}
-            src="../../public/images/icon-add-to-cart.svg"
+            src="images/icon-add-to-cart.svg"
           />
           <StyledTextoButtonCart>Add to Cart</StyledTextoButtonCart>
         </StyledContainerButtonCart>
