@@ -257,7 +257,7 @@ export const StyledDivCarbonNeutral = styled.div`
       props.$larguraUsuario < 768 &&
       props.$larguraUsuario <= 425
     ) {
-      return "1rem";
+      return "0.6rem";
     }
   }};
   display: flex;

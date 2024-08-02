@@ -83,7 +83,7 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
               <StyledImgItens
                 $larguraUsuario={larguraUsuario}
                 onClick={() => tirarTodosItens(id)}
-                src="./src/assets/images/icon-remove-item.svg"
+                src="../../src/assets/images/icon-remove-item.svg"
               />
             </StyledDivCarrinhoProduto>
           ) : null;
@@ -96,7 +96,7 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
           </StyledSpanTwoTotal>
         </StyledSpanOneTotal>
         <StyledDivCarbonNeutral $larguraUsuario={larguraUsuario}>
-          <img src="./src/assets/images/icon-carbon-neutral.svg" />
+          <img src="../../src/assets/images/icon-carbon-neutral.svg" />
           <span>
             This is a <strong>carbon-neutral</strong> delivery
           </span>
