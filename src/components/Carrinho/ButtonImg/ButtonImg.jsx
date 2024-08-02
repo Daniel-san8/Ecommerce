@@ -5,7 +5,7 @@ export const StyledContainerButtonCart = styled.div`
 
   width: ${(props) => {
     if (props.$larguraUsuario >= 1024) {
-      return "50%";
+      return "60%";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "80%";
     } else if (
@@ -19,7 +19,7 @@ export const StyledContainerButtonCart = styled.div`
 
   height: ${(props) => {
     if (props.$larguraUsuario >= 1024) {
-      return "7%";
+      return "11.50%";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "8%";
     } else if (
@@ -36,7 +36,7 @@ export const StyledContainerButtonCart = styled.div`
 
   bottom: ${(props) => {
     if (props.$larguraUsuario >= 1024) {
-      return "46%";
+      return "28%";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "15%";
     } else if (
@@ -49,7 +49,7 @@ export const StyledContainerButtonCart = styled.div`
   }};
   right: ${(props) => {
     if (props.$larguraUsuario >= 1024) {
-      return "25%";
+      return "20%";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "30%";
     } else if (
@@ -64,6 +64,7 @@ export const StyledContainerButtonCart = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  gap: ${(props) => (props.$larguraUsuario >= 1024 ? ".2rem" : "1rem")};
   border-radius: ${(props) => {
     return props.$larguraUsuario >= 768 ? "50px" : "25px";
   }};
@@ -72,7 +73,7 @@ export const StyledContainerButtonCart = styled.div`
 
   font-size: ${(props) => {
     if (props.$larguraUsuario >= 1024) {
-      return "1rem";
+      return ".8rem";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "1.5rem";
     } else if (
@@ -93,7 +94,7 @@ export const StyledContainerButtonCart = styled.div`
 export const StyledCarrinhoProntoImg = styled.img`
   height: ${(props) => {
     if (props.$larguraUsuario >= 1024) {
-      return "initial";
+      return "15px";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "35px";
     } else if (
@@ -156,7 +157,17 @@ export const StyledButtonOnProduct = styled.div`
   font-weight: 600;
 
   font-size: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "1.5rem" : "1rem";
+    if (props.$larguraUsuario >= 1024) {
+      return "initial";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "1.5rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "1rem";
+    }
   }};
 
   transition: 0.3s;
@@ -164,10 +175,10 @@ export const StyledButtonOnProduct = styled.div`
 
 export const StyledButtonOnProductIncDec = styled.span`
   display: flex;
-  transition: 0.2s;
   gap: ${(props) => {
     return props.$larguraUsuario >= 768 ? "4rem" : "3rem";
   }};
+  transition: 0.2s;
 `;
 
 export const StyledspanIncDec = styled.span`
@@ -175,7 +186,17 @@ export const StyledspanIncDec = styled.span`
   align-self: center;
   cursor: pointer;
   height: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "5px" : "initial";
+    if (props.$larguraUsuario >= 1024) {
+      return "initial";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "25px";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "initial";
+    }
   }};
 
   transition: 0.2s;
@@ -184,8 +205,19 @@ export const StyledspanIncMais = styled.span`
   display: flex;
   align-self: center;
   cursor: pointer;
+
   height: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "25px" : "initial";
+    if (props.$larguraUsuario >= 1024) {
+      return "initial";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "25px";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "initial";
+    }
   }};
   transition: 0.2s;
 `;

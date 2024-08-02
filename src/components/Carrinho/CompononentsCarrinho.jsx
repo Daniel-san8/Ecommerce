@@ -2,13 +2,25 @@ import styled from "styled-components";
 
 export const StyledTituloCarrinho = styled.h2`
   color: hsl(14, 86%, 42%);
+
   padding: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "2rem" : "1.5rem";
+    if (props.$larguraUsuario >= 1024) {
+      return "1rem";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "2rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "1.5rem";
+    }
   }};
+  margin: 0;
 
   font-size: ${(props) => {
     if (props.$larguraUsuario >= 1024) {
-      return "1.5rem";
+      return "1rem";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "2.5rem";
     } else if (
@@ -53,7 +65,7 @@ export const StyledCarrinhoImg = styled.img`
   max-width: 80%;
   width: ${(props) => {
     if (props.$larguraUsuario >= 1024) {
-      return "20%";
+      return "50%";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "55%";
     } else if (
@@ -67,11 +79,12 @@ export const StyledCarrinhoImg = styled.img`
 `;
 
 export const StyledCarrinhoParagrafo = styled.p`
+  margin: 0.5rem;
   color: hsl(12, 20%, 44%);
   font-weight: 600;
   font-size: ${(props) => {
     if (props.$larguraUsuario >= 1024) {
-      return "1rem";
+      return ".8rem";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "2rem";
     } else if (
@@ -82,6 +95,7 @@ export const StyledCarrinhoParagrafo = styled.p`
       return "1rem";
     }
   }};
+  white-space: nowrap;
 `;
 
 export const StyledDivCarrinhoProduto = styled.div`
