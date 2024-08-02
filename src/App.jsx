@@ -5,9 +5,23 @@ import Produtos from "./components/Produtos/Produtos";
 import ModalConfirmed from "./components/ModalConfirmed/ModalConfirmed";
 
 function App() {
+  let [larguraUsuario, setLarguraUsuario] = React.useState(innerWidth);
+
+  React.useEffect(() => {
+    function atualizaLargura() {
+      setLarguraUsuario(innerWidth);
+      console.log(larguraUsuario);
+    }
+    window.addEventListener("resize", atualizaLargura);
+    return () => {
+      window.removeEventListener("resize", atualizaLargura);
+    };
+  }, [larguraUsuario]);
   return (
     <GlobalStorage>
-      <h1 className="titulo">Desserts</h1>
+      <h1 className={larguraUsuario < 1024 ? "titulo" : "tituloResponse"}>
+        Desserts
+      </h1>
       <Produtos />
       <ModalConfirmed />
     </GlobalStorage>

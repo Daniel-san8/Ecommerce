@@ -12,7 +12,7 @@ export const StyledDivPrincipal = styled.div`
     return props.$larguraUsuario < 1024 ? "nowrap" : "wrap";
   }};
   padding: ${(props) => {
-    return props.$larguraUsuario < 1024 ? "0" : "3rem";
+    return props.$larguraUsuario < 1024 ? "0" : "0 3rem";
   }};
 `;
 
