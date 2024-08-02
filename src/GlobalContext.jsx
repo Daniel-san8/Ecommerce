@@ -15,6 +15,7 @@ export const GlobalStorage = ({ children }) => {
         const ids = json.map((dado) => dado.id);
         setIds(ids);
         setDados(json);
+        console.log(dados);
       } catch (error) {
         console.error("Erro no consumo da API:", error);
       }
