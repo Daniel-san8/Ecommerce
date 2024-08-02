@@ -21,7 +21,7 @@ const Carrinho = () => {
           <StyledCarrinhoDiv>
             <StyledCarrinhoImg
               $larguraUsuario={larguraUsuario}
-              src="../../src/assets/images/illustration-empty-cart.svg"
+              src="../../public/images/illustration-empty-cart.svg"
             ></StyledCarrinhoImg>
             <StyledCarrinhoParagrafo $larguraUsuario={larguraUsuario}>
               Your added items will appear here

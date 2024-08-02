@@ -26,7 +26,6 @@ const Produtos = () => {
   } = React.useContext(GlobalContext);
 
   if (dados === null) return null;
-
   return (
     <div
       style={{

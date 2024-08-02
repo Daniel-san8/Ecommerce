@@ -66,7 +66,7 @@ const ModalConfirmed = () => {
               padding: "0",
               margin: "0",
             }}
-            src="../../src/assets/images/icon-order-confirmed.svg"
+            src="../../public/images/icon-order-confirmed.svg"
             alt="Order Confirmed"
           />
           <h1 style={{ padding: "0", margin: "0" }}>
