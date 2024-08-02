@@ -45,7 +45,9 @@ export const StyledImg = styled.img`
 
 export const StyledDadosImagem = styled.div`
   margin: ${(props) => {
-    if (props.$larguraUsuario >= 1024) {
+    if (props.$larguraUsuario >= 1800) {
+      return "0 2rem";
+    } else if (props.$larguraUsuario >= 1024) {
       return "0 1rem";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "0 2.5rem";

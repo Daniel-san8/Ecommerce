@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledContainerButtonCart = styled.div`
   background-color: white;
-
   width: ${(props) => {
     if (props.$larguraUsuario >= 1024) {
       return "60%";
@@ -47,14 +46,20 @@ export const StyledContainerButtonCart = styled.div`
   position: absolute;
 
   bottom: ${(props) => {
-    if (props.$larguraUsuario > 1440) {
+    if (props.$larguraUsuario >= 2100) {
       return "8%";
+    } else if (props.$larguraUsuario >= 1830) {
+      return "13%";
+    } else if (props.$larguraUsuario >= 1600) {
+      return "16%";
+    } else if (props.$larguraUsuario > 1440) {
+      return "18%";
     } else if (props.$larguraUsuario >= 1440 && props.$larguraUsuario < 2560) {
       return "18%";
     } else if (props.$larguraUsuario >= 1024) {
-      return "29%";
+      return "95px";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
-      return "15%";
+      return "140px";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
@@ -70,12 +75,16 @@ export const StyledContainerButtonCart = styled.div`
     }
   }};
   right: ${(props) => {
-    if (props.$larguraUsuario > 1440) {
-      return "30%";
+    if (props.$larguraUsuario >= 2100) {
+      return "27%";
+    } else if (props.$larguraUsuario >= 1930) {
+      return "23%";
+    } else if (props.$larguraUsuario > 1440 && props.$larguraUsuario < 1600) {
+      return "20%";
     } else if (props.$larguraUsuario >= 1024) {
       return "20%";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
-      return "30%";
+      return "33%";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
@@ -190,14 +199,20 @@ export const StyledButtonOnProduct = styled.div`
   max-width: 300px;
   position: absolute;
   bottom: ${(props) => {
-    if (props.$larguraUsuario > 1440) {
+    if (props.$larguraUsuario >= 2100) {
       return "8%";
+    } else if (props.$larguraUsuario >= 1830) {
+      return "13%";
+    } else if (props.$larguraUsuario >= 1600) {
+      return "16%";
+    } else if (props.$larguraUsuario > 1440) {
+      return "18%";
     } else if (props.$larguraUsuario >= 1440 && props.$larguraUsuario < 2560) {
       return "18%";
     } else if (props.$larguraUsuario >= 1024) {
-      return "29%";
+      return "95px";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
-      return "15%";
+      return "140px";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
@@ -213,12 +228,16 @@ export const StyledButtonOnProduct = styled.div`
     }
   }};
   right: ${(props) => {
-    if (props.$larguraUsuario > 1440) {
-      return "30%";
+    if (props.$larguraUsuario >= 2100) {
+      return "27%";
+    } else if (props.$larguraUsuario >= 1930) {
+      return "23%";
+    } else if (props.$larguraUsuario > 1440 && props.$larguraUsuario < 1600) {
+      return "20%";
     } else if (props.$larguraUsuario >= 1024) {
       return "20%";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
-      return "30%";
+      return "33%";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
