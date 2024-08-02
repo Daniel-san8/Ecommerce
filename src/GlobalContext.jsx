@@ -10,7 +10,7 @@ export const GlobalStorage = ({ children }) => {
   React.useEffect(() => {
     async function puxarDados() {
       try {
-        const dadosOk = await fetch("/src/assets/data/data.json");
+        const dadosOk = await fetch("./src/assets/data/data.json");
         const json = await dadosOk.json();
         const ids = json.map((dado) => dado.id);
         setIds(ids);
