@@ -3,13 +3,16 @@ import styled from "styled-components";
 export const StyledDivPrincipal = styled.div`
   display: flex;
   width: ${(props) => {
-    return props.$larguraUsuario < 1024 ? "initial" : "100%";
+    return props.$larguraUsuario < 1024 ? "initial" : "60%";
   }};
   flex-direction: ${(props) => {
     return props.$larguraUsuario < 1024 ? "column" : "row";
   }};
   flex-wrap: ${(props) => {
     return props.$larguraUsuario < 1024 ? "nowrap" : "wrap";
+  }};
+  padding: ${(props) => {
+    return props.$larguraUsuario < 1024 ? "0" : "3rem";
   }};
 `;
 
