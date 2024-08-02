@@ -35,7 +35,9 @@ export const StyledContainerButtonCart = styled.div`
   position: absolute;
 
   bottom: ${(props) => {
-    if (props.$larguraUsuario >= 1440) {
+    if (props.$larguraUsuario > 1440) {
+      return "8%";
+    } else if (props.$larguraUsuario >= 1440 && props.$larguraUsuario < 2560) {
       return "18%";
     } else if (props.$larguraUsuario >= 1024) {
       return "29%";
@@ -50,7 +52,9 @@ export const StyledContainerButtonCart = styled.div`
     }
   }};
   right: ${(props) => {
-    if (props.$larguraUsuario >= 1024) {
+    if (props.$larguraUsuario > 1440) {
+      return "30%";
+    } else if (props.$larguraUsuario >= 1024) {
       return "20%";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "30%";
@@ -74,7 +78,9 @@ export const StyledContainerButtonCart = styled.div`
   cursor: pointer;
 
   font-size: ${(props) => {
-    if (props.$larguraUsuario >= 1024) {
+    if (props.$larguraUsuario > 1440) {
+      return "1.5rem";
+    } else if (props.$larguraUsuario >= 1024) {
       return ".8rem";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "1.5rem";
@@ -95,7 +101,9 @@ export const StyledContainerButtonCart = styled.div`
 
 export const StyledCarrinhoProntoImg = styled.img`
   height: ${(props) => {
-    if (props.$larguraUsuario >= 1024) {
+    if (props.$larguraUsuario > 1440) {
+      return "30px";
+    } else if (props.$larguraUsuario >= 1024) {
       return "15px";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "35px";
@@ -145,7 +153,9 @@ export const StyledButtonOnProduct = styled.div`
   max-width: 300px;
   position: absolute;
   bottom: ${(props) => {
-    if (props.$larguraUsuario >= 1440) {
+    if (props.$larguraUsuario > 1440) {
+      return "8%";
+    } else if (props.$larguraUsuario >= 1440) {
       return "18%";
     } else if (props.$larguraUsuario >= 1024) {
       return "29%";
@@ -160,7 +170,9 @@ export const StyledButtonOnProduct = styled.div`
     }
   }};
   right: ${(props) => {
-    if (props.$larguraUsuario >= 1024) {
+    if (props.$larguraUsuario > 1440) {
+      return "30%";
+    } else if (props.$larguraUsuario >= 1024) {
       return "20%";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "30%";
