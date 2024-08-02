@@ -11,6 +11,12 @@ export const StyledTituloCarrinho = styled.h2`
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
+      props.$larguraUsuario >= 425
+    ) {
+      return "1.5rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
       props.$larguraUsuario <= 425
     ) {
       return "1.5rem";
@@ -158,6 +164,12 @@ export const StyledImgItens = styled.img`
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
+      props.$larguraUsuario >= 425
+    ) {
+      return "25px";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
       props.$larguraUsuario <= 425
     ) {
       return "20px";
@@ -259,6 +271,12 @@ export const StyledAnchorButtonOrder = styled.a`
       return ".7rem 2rem";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "2rem 4rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario >= 425
+    ) {
+      return "1rem 3rem";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&

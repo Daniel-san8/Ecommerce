@@ -50,11 +50,14 @@ export const StyledDadosImagem = styled.div`
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
       return "0 2.5rem";
     } else if (
-      props.$larguraUsuario < 1024 &&
-      props.$larguraUsuario < 768 &&
-      props.$larguraUsuario <= 425
+      (props.$larguraUsuario < 1024 &&
+        props.$larguraUsuario < 768 &&
+        props.$larguraUsuario <= 425) ||
+      (props.$larguraUsuario < 1024 &&
+        props.$larguraUsuario < 768 &&
+        props.$larguraUsuario >= 425)
     ) {
-      return "0 1.5rem";
+      return "0 1.6rem";
     }
   }};
 

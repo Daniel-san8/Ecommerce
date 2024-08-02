@@ -249,7 +249,7 @@ export const StyledButtonOnProduct = styled.div`
     } else if (props.$larguraUsuario >= 1024) {
       return ".7rem";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
-      return "1.5rem";
+      return "2rem";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
@@ -304,7 +304,7 @@ export const StyledspanIncDec = styled.span`
     } else if (props.$larguraUsuario >= 1024) {
       return "initial";
     } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
-      return "25px";
+      return "6px";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
