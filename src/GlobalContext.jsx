@@ -10,12 +10,11 @@ export const GlobalStorage = ({ children }) => {
   React.useEffect(() => {
     async function puxarDados() {
       try {
-        const dadosOk = await fetch("/Ecommerce/public/data.json");
+        const dadosOk = await fetch("./public/data.json");
         const json = await dadosOk.json();
         const ids = json.map((dado) => dado.id);
         setIds(ids);
         setDados(json);
-        console.log("boaaa");
       } catch (error) {
         console.error("Erro no consumo da API:", error);
       }
