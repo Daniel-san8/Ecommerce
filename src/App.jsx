@@ -10,7 +10,6 @@ function App() {
   React.useEffect(() => {
     function atualizaLargura() {
       setLarguraUsuario(innerWidth);
-      console.log(larguraUsuario);
     }
     window.addEventListener("resize", atualizaLargura);
     return () => {
