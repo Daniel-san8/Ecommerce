@@ -83,7 +83,7 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
               <StyledImgItens
                 $larguraUsuario={larguraUsuario}
                 onClick={() => tirarTodosItens(id)}
-                src="../../public/images/icon-remove-item.svg"
+                src="/images/icon-remove-item.svg"
               />
             </StyledDivCarrinhoProduto>
           ) : null;
