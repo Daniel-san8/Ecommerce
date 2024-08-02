@@ -88,6 +88,7 @@ const CarrinhoProduto = ({ totalItems, itensNoCarrinho, tirarTodosItens }) => {
             </StyledDivCarrinhoProduto>
           ) : null;
         })}
+
         <StyledSpanOneTotal $larguraUsuario={larguraUsuario}>
           Order Total{" "}
           <StyledSpanTwoTotal $larguraUsuario={larguraUsuario}>

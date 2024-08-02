@@ -123,6 +123,7 @@ export const StyledDivCarrinhoProduto = styled.div`
   padding: ${(props) => {
     return props.$larguraUsuario >= 768 ? "0 1rem" : "initial";
   }};
+  margin-bottom: 1rem;
 `;
 
 export const StyledDivCarrinhoProdutoItens = styled.div`
@@ -131,6 +132,14 @@ export const StyledDivCarrinhoProdutoItens = styled.div`
   flex: 1;
   gap: 0.8rem;
   padding: 0 1.5rem;
+  &::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: calc(100% + 70px);
+    background-color: hsl(25, 58%, 88%);
+    height: 2px;
+  }
 `;
 
 export const StyledTituloProduto = styled.span`
@@ -212,6 +221,7 @@ export const StyledSpanOneTotal = styled.span`
       return "1rem";
     }
   }};
+
   transition: 0.3s;
 `;
 

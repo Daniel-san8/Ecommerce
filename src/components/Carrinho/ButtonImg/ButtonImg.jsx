@@ -274,7 +274,7 @@ export const StyledButtonOnProduct = styled.div`
       props.$larguraUsuario < 768 &&
       props.$larguraUsuario >= 425
     ) {
-      return "1.5rem";
+      return "1rem";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
@@ -329,7 +329,7 @@ export const StyledspanIncDec = styled.span`
       props.$larguraUsuario < 768 &&
       props.$larguraUsuario >= 425
     ) {
-      return "5px";
+      return "3px";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
@@ -357,7 +357,7 @@ export const StyledspanIncMais = styled.span`
       props.$larguraUsuario < 768 &&
       props.$larguraUsuario >= 425
     ) {
-      return "20px";
+      return "13px";
     } else if (
       props.$larguraUsuario < 1024 &&
       props.$larguraUsuario < 768 &&
