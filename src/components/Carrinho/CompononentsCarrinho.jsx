@@ -102,7 +102,17 @@ export const StyledDivCarrinhoProduto = styled.div`
   display: flex;
   align-items: center;
   font-size: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "2rem" : "initial";
+    if (props.$larguraUsuario >= 1024) {
+      return "initial";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "1.5rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "1rem";
+    }
   }};
   padding: ${(props) => {
     return props.$larguraUsuario >= 768 ? "0 1rem" : "initial";
@@ -141,10 +151,31 @@ export const StyledSpanDois = styled.span`
 
 export const StyledImgItens = styled.img`
   width: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "40px" : "20px";
+    if (props.$larguraUsuario >= 1024) {
+      return "20px";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "40px";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "20px";
+    }
   }};
+
   height: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "40px" : "20px";
+    if (props.$larguraUsuario >= 1024) {
+      return "20px";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "40px";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "20px";
+    }
   }};
   padding: 0 1.5rem;
   cursor: pointer;
@@ -157,7 +188,17 @@ export const StyledSpanOneTotal = styled.span`
   gap: 1rem;
   padding: 1.5rem 0;
   font-size: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "2rem" : "initial";
+    if (props.$larguraUsuario >= 1024) {
+      return "initial";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "1.5rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "1rem";
+    }
   }};
   transition: 0.3s;
 `;
@@ -165,7 +206,17 @@ export const StyledSpanOneTotal = styled.span`
 export const StyledSpanTwoTotal = styled.span`
   font-weight: bold;
   font-size: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "2rem" : "initial";
+    if (props.$larguraUsuario >= 1024) {
+      return "1.5rem";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "1.5rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "1rem";
+    }
   }};
 `;
 
@@ -175,7 +226,17 @@ export const StyledDivCarbonNeutral = styled.div`
   margin: 0 1.5rem;
   white-space: nowrap;
   font-size: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "1.5rem" : "0.8rem";
+    if (props.$larguraUsuario >= 1024) {
+      return "0.8rem";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "1.5rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "1rem";
+    }
   }};
   display: flex;
   align-items: center;
@@ -193,12 +254,22 @@ export const StyledAnchorButtonOrder = styled.a`
   background-color: hsl(14, 86%, 42%);
   text-decoration: none;
   color: white;
-  padding: 1rem 3rem;
   padding: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "2rem 4rem" : "1rem 3rem";
+    if (props.$larguraUsuario >= 1024) {
+      return ".7rem 2rem";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "2rem 4rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "1rem 3rem";
+    }
   }};
+
   width: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "60%" : "30%";
+    return props.$larguraUsuario >= 768 ? "80%" : "30%";
   }};
   display: flex;
   justify-content: center;
@@ -207,8 +278,19 @@ export const StyledAnchorButtonOrder = styled.a`
     return props.$larguraUsuario >= 768 ? "50px" : "25px";
   }};
   cursor: pointer;
+
   font-size: ${(props) => {
-    return props.$larguraUsuario >= 768 ? "1.5rem" : "1rem";
+    if (props.$larguraUsuario >= 1024) {
+      return "0.8rem";
+    } else if (props.$larguraUsuario < 1024 && props.$larguraUsuario >= 768) {
+      return "1.5rem";
+    } else if (
+      props.$larguraUsuario < 1024 &&
+      props.$larguraUsuario < 768 &&
+      props.$larguraUsuario <= 425
+    ) {
+      return "1rem";
+    }
   }};
   transition: 0.3s;
   &:hover {

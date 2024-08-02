@@ -20,7 +20,10 @@ export const StyledDivPrincipal = styled.div`
 `;
 
 export const StyledDivImg = styled.div`
-  flex: 1 1 calc(33.333% - 10px);
+  flex: ${(props) =>
+    props.$larguraUsuario >= 1024 && props.$larguraUsuario < 1440
+      ? "1 1 calc(33.333% - 10px)"
+      : "1 1 calc(33.333% - 10px)"};
   position: relative;
 `;
 
@@ -30,6 +33,7 @@ export const StyledImg = styled.img`
   width: ${(props) => {
     return props.$larguraUsuario < 1024 ? "90%" : "100%";
   }};
+
   margin: ${(props) => {
     return props.$larguraUsuario < 1024 ? "2rem auto" : "1.5rem auto";
   }};
